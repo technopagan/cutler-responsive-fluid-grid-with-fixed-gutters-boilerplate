@@ -23,21 +23,21 @@ html {
 }
 
 /*
-Responsive Font Resizing
+Responsive Font Resizing // #FIXME: There must be sth better than these min+max rules...
 */
-@media (max-width: 30em) { /* Range: 0 to 480px */
+@media (min-width: 0em) and (max-width: 30em) { /* Range: 0 to 480px */
     html {
         font-size: 37.5%;
     }
 }
 
-@media (max-width: 48em) { /* Range: 481px to 768px */
+@media (min-width: 30.001em) and (max-width: 48em) { /* Range: 481px to 768px */
     html {
         font-size: 43.5%;
     }
 }
 
-@media (max-width: 64em) { /* Range: 769px to 1024px */
+@media (min-width: 48.001em) and (max-width: 64em) { /* Range: 769px to 1024px */
     html {
         font-size: 50%;
     }
@@ -63,8 +63,8 @@ High level layout elements
 header,
 section,
 footer {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* #FIXME: The calculated 75em that should be 1200px do not work. It seems that app. 43.8em are ~1200px for some reason. Understand & fix! */
+    margin: 0 auto; /* centered layout */
 }
 
 /*
@@ -420,6 +420,7 @@ Normalize monospace sizing
 pre,
 code {
     font-family: Courier New, Courier, monospace, serif;
+    font-size: 10px;
     font-size: 1.0rem;
 }
 
