@@ -283,6 +283,15 @@ Custom Webfonts
     font-weight: 400;
 }
 
+/* 
+White text usable on dark backgrounds
+*/
+.whitetext {
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+
 /*
 Sensible default link styles
 */
@@ -432,6 +441,9 @@ code {
 
 
 
+
+
+
 .circled {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -512,10 +524,6 @@ figcaption{display:table-caption;caption-side:bottom}
 
 
 
-
-
-/* whitetext class with black textshadow */
-
 /* max-width for the page parent around gridboxes... maybe the grid-row?!... */
 
 /* 100% Height+Width Page-Class, die Slide-ähnliche Layouts ermöglicht */
@@ -525,6 +533,12 @@ figcaption{display:table-caption;caption-side:bottom}
 
 /* responsive font-scaling needs more love - fonts become slightly bigger before they become smaller 
     und h1 ist auf kleinen Screens noch zu groß
+*/
+
+
+/*
+Grid's Push classes can currently only push one element per row.
+e.g. if you try to push a 25% box to the second 25% position and a second 25% box to the fourth 25% position, the 2nd grid box will be positioned incorrectly
 */
 
 
