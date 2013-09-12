@@ -54,10 +54,21 @@ body {
     color: #333;
     text-shadow: 0 0 1px #fff;
     text-shadow: 0 0 1px rgba(255,255,255,0.4);
+    background-color: #333;
 }
 
 /*
-grid with fluid boxes & fixed gutters
+High level layout elements
+*/
+header,
+section,
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+Grid with fluid boxes & fixed gutters
 */
 .grid-row,
 .grid-box-1,
@@ -243,7 +254,6 @@ Non-Grid fullwidth class that stretches over the entire width of the browser win
 */
 .fullwidth {
     width: 100%;
-    margin-bottom: 30px; /* #gutter */
 }
 
 .fullwidth .content {
@@ -524,7 +534,6 @@ figcaption{display:table-caption;caption-side:bottom}
 
 
 
-/* max-width for the page parent around gridboxes... maybe the grid-row?!... */
 
 /* 100% Height+Width Page-Class, die Slide-ähnliche Layouts ermöglicht */
 
