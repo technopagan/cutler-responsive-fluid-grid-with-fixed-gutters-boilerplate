@@ -26,14 +26,22 @@
         background-color: #999;
       }
 
+      .page:first-of-type {
+        background-image: url(http://placepuppy.it/2560/1600);
+      }
+
+      .page + .page {
+        background-image: url(http://lorempixel.com/1920/1080/cats/);
+      }
+
     </style>
 
 	</head>
 	<body>
 
-    <section class="page verticalcenter-parent whitetext">
+    <section class="page bgcover verticalorientation-parent whitetext">
 
-      <div class="verticalcenter">
+      <div class="verticalorientation-center">
         <div class="grid-row equalheightboxes boxpadding">
           <div class="grid-box-goldenratio-large">
             <div class="content">
@@ -51,14 +59,21 @@
 
     </section>
 
-    <section class="page maincolumn verticalcenter-parent whitetext">
+    <section class="page bgcover verticalorientation-parent whitetext">
 
-      <div class="verticalcenter">
+      <div class="verticalorientation-top">
+        <div class="fullwidth boxpadding">
+            <div class="content">
+              Header
+          </div>
+        </div>
+      </div>
+
+      <div class="verticalorientation-center maincolumn">
         <div class="grid-row equalheightboxes boxpadding">
           <div class="grid-box-goldenratio-large">
             <div class="content">
               <p>Large Golden Ratio</p>
-              <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.</p>
             </div>
           </div>
           <div class="grid-box-goldenratio-small">
@@ -69,12 +84,14 @@
         </div>
       </div>
 
-    </section>    
-
-    <section class="fullwidth boxpadding">
-      <div class="content">
-        <h1>Full Width Non Grid</h1>
+      <div class="verticalorientation-bottom">
+        <div class="fullwidth boxpadding">
+          <div class="content">
+            Footer
+          </div>
+        </div>
       </div>
+
     </section>
 
      <section class="maincolumn">
@@ -94,9 +111,9 @@
       <div class="grid-row equalheightboxes boxpadding">
         <div class="grid-box-1-2">
           <div class="content">
-            <div class="verticalcenter-parent">
+            <div class="verticalorientation-parent">
               <img src="http://placehold.it/50x200" alt="Placeholder" style="float: left;">
-              <p class="verticalcenter">50%, vertically centered</p>
+              <p class="verticalorientation-center">50%, vertically centered</p>
             </div>
           </div>
         </div>

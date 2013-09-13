@@ -266,18 +266,34 @@ Non-Grid fullwidth class that stretches over the entire width of the browser win
 }
 
 /*
-Vertical centering using parent+child classes - can only be used by blocklevel elements nested within .content
+Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
 */
-.verticalcenter-parent {
+.verticalorientation-parent {
     display: table;
     position: relative;
     overflow: hidden;
 }
 
-.verticalcenter {
-    display: table-cell;
+.verticalorientation-top {
+    display: table-row;
+    vertical-align: top;
+}
+
+.verticalorientation-center {
+    display: table-cell; /* table-cell makes it work in a variety of contexts */
     vertical-align: middle;
 }
+
+.verticalorientation-bottom {
+    display: table-row;
+    vertical-align: bottom;
+}
+
+.verticalorientation-bottom div { /* special care so that the box actually touches bottom 0 */
+    display: table-cell;
+    vertical-align: bottom;    
+}
+
 
 /*
 Custom Webfonts
@@ -449,7 +465,16 @@ figcaption {
 }
 
 /*
-Helper class to make the GPU handle object rendering
+Autoexpand the background image to cover the whole container size
+*/
+.bgcover {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+/*
+Make the GPU handle object rendering
 */
 .gpuaccel {
     -moz-transform: translate3d(0,0,0);
