@@ -55,7 +55,6 @@ body {
     color: #333;
     text-shadow: 0 0 1px #fff;
     text-shadow: 0 0 1px rgba(255,255,255,0.4);
-    background-color: #333;
 }
 
 /*
@@ -84,7 +83,8 @@ Grid with fluid boxes & fixed gutters
 .grid-box-3-4,
 .grid-box-goldenratio-large,
 .grid-box-goldenratio-small,
-.fullwidth .content {
+.fullwidth .content,
+figcaption {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; /* box model switch */
@@ -116,15 +116,12 @@ Grid with fluid boxes & fixed gutters
 }
 
 .boxpadding .content { /* special class that can be added to .grid-row for #innerpadding */
-    padding: 17px;
-    padding: 1.716rem;
+    padding: 30px;
 }
 
 .boxpadding .content:after { /* #innerpadding */
-    padding: 0 17px;
-    padding: 0 1.716rem;
-    margin-left: -17px;
-    margin-left: -1.716rem;
+    padding: 0 30px;
+    margin-left: -30px;
 }
 
 .grid-box-1 {
@@ -427,169 +424,37 @@ code {
     font-size-adjust: 0.42;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.circled {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -khtml-border-radius: 50%;
-    border-radius: 50%;
-}
-
-
-.gpuaccel {
-    -moz-transform: translate3d(0,0,0) !important;
-    -ms-transform: translate3d(0,0,0) !important;
-    -o-transform: translate3d(0,0,0) !important;
-    -webkit-transform: translate3d(0,0,0) !important;
-    transform: translate3d(0,0,0) !important;
-}
-
-
-
-
-
-
-
-
-/* layout for captions over images */
+/* 
+Figcaption layout over images
+*/
 figure {
-    display: block;
     position: relative;
-    float:left;
+    display: block;
+    float: left;
     width: 100%;
-
-}
-
-figure p{
-    margin: 0;
-
 }
 
 figure img {
-    float:left;
+    float: left;
 }
 
 figcaption {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background: #f4f4f4;
-    padding:20px;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: bold;
-    color: #333333;
-}
-figcaption:hover{
-    color:#67bc51;
+    padding: 0 15px;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.66);
 }
 
 /*
-figure{display:table}
-figcaption{display:table-caption;caption-side:bottom}
+Helper class to make the GPU handle object rendering
 */
-
-
-
-
-
-
-
-
-
-/* nur temp. fuer debugging ... */
-.content {
-    background-color: #999;
+.gpuaccel {
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
-
-
-
-/*
-Lint the CSS
-*/
-
-
-/*
-Grid's Push classes can currently only push one element per row.
-e.g. if you try to push a 25% box to the second 25% position and a second 25% box to the fourth 25% position, the 2nd grid box will be positioned incorrectly
-*/
-
-
-/*  Chrome/WebKit on zooming +/- has rounding errors when calculating the width of the .equalheightboxes .content:after pseudoclass to create fake equal height columns
-    The pseudoelement is 1px or 2px wider than the zoom-scaled parent grid box and thus pokes out slightly to the right. Other browsers round/size everything fine.
-    This will be tricky to debug!
- */
-
-
-/* soft-cropping for images before they then start to liquid rescale */
-
-/* Alle Grids + Layouts + mediaqueried Styles Mobile First + dann ein eigenes IE8 CSS mit Desktop-relevantem CSS */
-
-
-
-/* RWD justify for horizontal spacing of objects within a single row */
-
-/* responsive video
-http://css-tricks.com/rundown-of-handling-flexible-media/
-
-img, embed, object, video {
-   max-width: 100%;
-   height: auto;
-}
-
- */
-
-/* responsive iframes */
-
-/* PRINT STYLESHEET !!! 
-
-    @media print {
-        a[href]:after {
-            content: " (" attr(href) ") ";
-        }
-    }
-
-*/
-
-/* 
-
-    Navigataur in Kombination mit:
-
-    off-canvas navigation or sidebar class, e.g. http://tympanus.net/Development/MultiLevelPushMenu/index.html 
-    https://github.com/dbushell/Responsive-Off-Canvas-Menu
-*/
-
-/* evt. SMACKs oder BEM syntax einsetzen
-http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
- */
