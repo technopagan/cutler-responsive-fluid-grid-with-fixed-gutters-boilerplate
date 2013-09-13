@@ -23,7 +23,7 @@ html {
 }
 
 /*
-Responsive Font Resizing // #FIXME: There must be sth better than these min+max rules...
+Responsive Font Resizing // #FIXME: There must be something with less overhead than these min+max rules
 */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) { /* Range: 1px to 480px */
     html {
@@ -116,12 +116,15 @@ Grid with fluid boxes & fixed gutters
 }
 
 .boxpadding .content { /* special class that can be added to .grid-row for #innerpadding */
-    padding: 10px;
+    padding: 17px;
+    padding: 1.716rem;
 }
 
 .boxpadding .content:after { /* #innerpadding */
-    padding: 0 10px;
-    margin-left: -10px;
+    padding: 0 17px;
+    padding: 0 1.716rem;
+    margin-left: -17px;
+    margin-left: -1.716rem;
 }
 
 .grid-box-1 {
@@ -165,9 +168,8 @@ Grid with fluid boxes & fixed gutters
 .grid-box-3-4,
 .grid-box-goldenratio-large,
 .grid-box-goldenratio-small {
-    float: left;
-    word-wrap: break-word;
     display: table;
+    float: left;
 }
 
 .grid-box-1:before,
@@ -207,6 +209,7 @@ Grid with fluid boxes & fixed gutters
 .content {
     display: table-cell;
     width: 100%;
+    word-wrap: break-word;
 }
 
 .content img { /* liquid rescaling for images */
@@ -283,18 +286,18 @@ Vertical centering using parent+child classes - can only be used by blocklevel e
 Custom Webfonts
 */
 @font-face {
-    font-family: 'foobar';
-    src: url('/fonts/foobar.eot');
-    src: url('/fonts/foobar.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/foobar.woff') format('woff'),
-         url('/fonts/foobar.ttf') format('truetype'),
-         url('/fonts/foobar.svg#foobar') format('svg');
+    font-family: 'customwebfont';
+    src: url('/fonts/customwebfont.eot');
+    src: url('/fonts/customwebfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/customwebfont.woff') format('woff'),
+         url('/fonts/customwebfont.ttf') format('truetype'),
+         url('/fonts/customwebfont.svg#customwebfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-.foobar {
-    font-family: foobar, Georgia, Times New Roman, serif;
+.customwebfont {
+    font-family: customwebfont, Georgia, Times New Roman, serif;
     font-weight: 400;
     font-size-adjust: 0.45;
 }
@@ -355,29 +358,22 @@ Fibonacci- / Lucas Sequence Font Sizing
 h1 {
     font-size: 66px; /* Pixel fallback for browsers that do not support REM units */
     font-size: 6.58rem;
-    line-height: 66rem;
-    line-height: 6.58rem;
+    line-height: 107px; /* Line height = font-size + 1 Lucas sequence step */
+    line-height: 10.728rem;
 }
 
 h2 {
     font-size: 41px;
     font-size: 4.148rem;
-    line-height: 41px;
-    line-height: 4.148rem;
+    line-height: 66px;
+    line-height: 6.58rem;
 }
 
-h3 {
+.content {
     font-size: 24px;
     font-size: 2.432rem;
-    line-height: 24rem;
-    line-height: 2.432rem;
-}
-
-p {
-    font-size: 17px;
-    font-size: 1.716rem;
-    line-height: 17px;
-    line-height: 1.716rem;    
+    line-height: 41px;
+    line-height: 4.148rem;
 }
 
 /*
@@ -539,15 +535,6 @@ figcaption{display:table-caption;caption-side:bottom}
 
 
 
-
-
-/* 65-85 Zeichen pro Zeile, auch für reponsive breakpoints */
-
-/* responsive font-scaling needs more love - fonts become slightly bigger before they become smaller 
-    und h1 ist auf kleinen Screens noch zu groß
-*/
-
-
 /*
 Lint the CSS
 */
@@ -557,6 +544,12 @@ Lint the CSS
 Grid's Push classes can currently only push one element per row.
 e.g. if you try to push a 25% box to the second 25% position and a second 25% box to the fourth 25% position, the 2nd grid box will be positioned incorrectly
 */
+
+
+/*  Chrome/WebKit on zooming +/- has rounding errors when calculating the width of the .equalheightboxes .content:after pseudoclass to create fake equal height columns
+    The pseudoelement is 1px or 2px wider than the zoom-scaled parent grid box and thus pokes out slightly to the right. Other browsers round/size everything fine.
+    This will be tricky to debug!
+ */
 
 
 /* soft-cropping for images before they then start to liquid rescale */
