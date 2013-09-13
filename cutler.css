@@ -13,12 +13,12 @@ Core basics
 html,
 body {
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 html {
-    height: 100%;
     font-size: 62.5%; /* Font normalization with REM units: 62.5% makes 1rem = 10px */
 }
 
@@ -51,6 +51,7 @@ body {
     -o-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
     font: normal normal normal 1.716rem/2.432rem Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size-adjust: 0.52;
     color: #333;
     text-shadow: 0 0 1px #fff;
     text-shadow: 0 0 1px rgba(255,255,255,0.4);
@@ -60,11 +61,15 @@ body {
 /*
 High level layout elements
 */
-header,
-section,
-footer {
+.page { /* Full width+height viewport class to create slide-like content */
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.maincolumn {
     max-width: 1200px; /* #FIXME: The calculated 75em that should be 1200px do not work. It seems that app. 43.8em are ~1200px for some reason. Understand & fix! */
-    margin: 0 auto; /* centered layout */
+    margin: 0 auto;
 }
 
 /*
@@ -291,6 +296,7 @@ Custom Webfonts
 .foobar {
     font-family: foobar, Georgia, Times New Roman, serif;
     font-weight: 400;
+    font-size-adjust: 0.45;
 }
 
 /* 
@@ -422,6 +428,7 @@ code {
     font-family: Courier New, Courier, monospace, serif;
     font-size: 10px;
     font-size: 1.0rem;
+    font-size-adjust: 0.42;
 }
 
 
@@ -534,15 +541,15 @@ figcaption{display:table-caption;caption-side:bottom}
 
 
 
-
-
-/* 100% Height+Width Page-Class, die Slide-ähnliche Layouts ermöglicht */
-
-
-/* Versalhöhe für fontstack + 65-85 Zeichen pro Zeile, auch für reponsive breakpoints */
+/* 65-85 Zeichen pro Zeile, auch für reponsive breakpoints */
 
 /* responsive font-scaling needs more love - fonts become slightly bigger before they become smaller 
     und h1 ist auf kleinen Screens noch zu groß
+*/
+
+
+/*
+Lint the CSS
 */
 
 
@@ -582,7 +589,11 @@ img, embed, object, video {
 
 */
 
-/* off-canvas navigation or sidebar class, e.g. http://tympanus.net/Development/MultiLevelPushMenu/index.html 
+/* 
+
+    Navigataur in Kombination mit:
+
+    off-canvas navigation or sidebar class, e.g. http://tympanus.net/Development/MultiLevelPushMenu/index.html 
     https://github.com/dbushell/Responsive-Off-Canvas-Menu
 */
 
