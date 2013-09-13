@@ -25,19 +25,19 @@ html {
 /*
 Responsive Font Resizing // #FIXME: There must be sth better than these min+max rules...
 */
-@media (min-width: 0em) and (max-width: 30em) { /* Range: 0 to 480px */
+@media only screen and (min-width: 0.0625em) and (max-width: 30em) { /* Range: 1px to 480px */
     html {
         font-size: 37.5%;
     }
 }
 
-@media (min-width: 30.001em) and (max-width: 48em) { /* Range: 481px to 768px */
+@media only screen and (min-width: 30.0625em) and (max-width: 48em) { /* Range: 481px to 768px */
     html {
         font-size: 43.5%;
     }
 }
 
-@media (min-width: 48.001em) and (max-width: 64em) { /* Range: 769px to 1024px */
+@media only screen and (min-width: 48.0625em) and (max-width: 64em) { /* Range: 769px to 1024px */
     html {
         font-size: 50%;
     }
@@ -210,8 +210,8 @@ Grid with fluid boxes & fixed gutters
     max-width: 100%;
 }
 
-/* Range: 0 to 480px */
-@media (max-width: 30em) {
+/* Range: 1px to 480px */
+@media only screen and (min-width: 0.0625em) and (max-width: 30em) {
     .grid-box-1-2,
     .grid-box-1-3,
     .grid-box-2-3,
@@ -231,7 +231,7 @@ Grid with fluid boxes & fixed gutters
 }
 
 /* Range: 481px to 768px */
-@media (max-width: 48em) {
+@media only screen and (min-width: 30.0625em) and (max-width: 48em) {
     .grid-box-1-4,
     .grid-box-3-4,
     .grid-box-goldenratio-large,
@@ -245,7 +245,7 @@ Grid with fluid boxes & fixed gutters
 }
 
 /* Range: 769px to 1024px */
-@media (max-width: 64em) {
+@media only screen and (min-width: 48.0625em) and (max-width: 64em) {
 
 }
 
