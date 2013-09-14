@@ -93,11 +93,12 @@ figcaption {
 .grid-row {
     overflow: hidden;
     padding-right: 30px; /* #gutter */
+    border-top: 30px solid transparent;
     border-bottom: 30px solid transparent;
 }
 
-.grid-row:first-of-type { /* #gutter */
-    border-top: 30px solid transparent;
+.grid-row ~ .grid-row {
+    border-top: none; /* prevent doubled gutter when 2 grid-rows are next to each other */
 }
 
 .grid-row:after { /* clearfix */

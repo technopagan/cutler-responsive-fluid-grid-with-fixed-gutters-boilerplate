@@ -10,8 +10,12 @@
     <meta name="keywords" content="boilerplate,css,grid,readability,tobias,baldauf">
     <meta name="author" content="Tobias Baldauf">
     <meta name="robots" content="index, follow">
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
 		<link rel="stylesheet" type="text/css" href="cutler.css">
 
     <style type="text/css">
@@ -26,12 +30,12 @@
         background-color: #999;
       }
 
-      .page:first-of-type {
+      .page {
         background-image: url(http://placepuppy.it/2560/1600);
       }
 
       .page + .page {
-        background-image: url(http://lorempixel.com/1920/1080/cats/);
+        background-image: url(http://placepuppy.it/2560/1600);
       }
 
     </style>
@@ -69,8 +73,8 @@
         </div>
       </div>
 
-      <div class="verticalorientation-center maincolumn">
-        <div class="grid-row equalheightboxes boxpadding">
+      <div class="verticalorientation-center">
+        <div class="grid-row maincolumn equalheightboxes boxpadding">
           <div class="grid-box-goldenratio-large">
             <div class="content">
               <p>Large Golden Ratio</p>
