@@ -1,51 +1,45 @@
 <!doctype html>
-<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="de"> <![endif]-->
-<!--[if IE 9]><html class="no-js lt-ie10" lang="de"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de"> <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <html>
   <head>
     <meta charset="UTF-8">
-		<title>Cutler -  Custom Boilerplate by Tobias Baldauf</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="boilerplate,css,grid,readability,tobias,baldauf">
+	<title>Cutler</title>
+    <meta name="description" content="A custom boilerplate for web development">
+    <meta name="keywords" content="boilerplate,css,responsive,fluid,grid,gutters,readability">
     <meta name="author" content="Tobias Baldauf">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<link rel="stylesheet" type="text/css" href="cutler.css">
 
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-		<link rel="stylesheet" type="text/css" href="cutler.css">
-
     <style type="text/css">
-
-      /* ONLY FOR DEMO PURPOSES - CAN BE DELETED */
-
+      /* ONLY FOR DEMO PURPOSES - SHOULD BE DELETED WHEN STARTING YOUR OWN PROJECT */
       body {
         background-color: #333;  
       }
-
       .content {
         background-color: #999;
       }
-
-      .page {
+      .screenfill {
         background-image: url(http://placepuppy.it/2560/1600);
       }
-
-      .page + .page {
+      .screenfill + .screenfill {
         background-image: url(http://placepuppy.it/2560/1600);
       }
-
     </style>
 
 	</head>
 	<body>
 
-    <section class="page bgcover verticalorientation-parent whitetext">
+    <section class="screenfill bgfill verticalorientation-wrapper whitetext">
 
-      <div class="verticalorientation-center">
+      <div class="verticalorientation-middle">
         <div class="grid-row equalheightboxes boxpadding">
           <div class="grid-box-goldenratio-large">
             <div class="content">
@@ -55,7 +49,8 @@
           <div class="grid-box-goldenratio-small">
             <div class="content">
               <p>Small Golden Ratio</p>
-              <p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules not order, a world where righteousness is not rewarded. That's Cesar's world, and if you're not willing to play by his rules, then you're gonna have to pay the price.</p>
+              <p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules, not order.</p>
+              <p><small>Samuel L. Lipsum</small></p>
             </div>
           </div>  
         </div>
@@ -63,7 +58,7 @@
 
     </section>
 
-    <section class="page bgcover verticalorientation-parent whitetext">
+    <section class="screenfill bgfill verticalorientation-wrapper whitetext">
 
       <div class="verticalorientation-top">
         <div class="fullwidth boxpadding">
@@ -73,8 +68,8 @@
         </div>
       </div>
 
-      <div class="verticalorientation-center">
-        <div class="grid-row maincolumn equalheightboxes boxpadding">
+      <div class="verticalorientation-middle">
+        <div class="grid-row limitwidth-centered equalheightboxes boxpadding">
           <div class="grid-box-goldenratio-large">
             <div class="content">
               <p>Large Golden Ratio</p>
@@ -98,10 +93,10 @@
 
     </section>
 
-     <section class="maincolumn">
+     <section class="limitwidth-centered">
 
-  		<div class="grid-row equalheightboxes boxpadding gpuaccel">
-        <div class="grid-box-1">
+  	  <div class="grid-row equalheightboxes boxpadding">
+        <div class="grid-box-whole">
           <div class="content">
             <h1 class="customwebfont">A major headline of magnitude one and long enough for line breakage</h1>
             <h2>Now for a medium heading of two which should also be so long that we can see what happens on a new line</h2>
@@ -113,15 +108,15 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-2">
+        <div class="grid-box-half">
           <div class="content">
-            <div class="verticalorientation-parent">
+            <div class="verticalorientation-wrapper">
               <img src="http://placehold.it/50x200" alt="Placeholder" style="float: left;">
-              <p class="verticalorientation-center">50%, vertically centered</p>
+              <p class="verticalorientation-middle">50%, vertically centered</p>
             </div>
           </div>
         </div>
-        <div class="grid-box-1-2">
+        <div class="grid-box-half">
           <div class="content">
             <figure>
               <img src="http://placepuppy.it/640/360" alt="Placeholder Puppy">
@@ -141,7 +136,7 @@
       </div>
     </section>
 
-    <section class="maincolumn">
+    <section class="limitwidth-centered">
 
       <div class="grid-row equalheightboxes boxpadding">
         <div class="grid-box-goldenratio-small">
@@ -157,12 +152,12 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-3">
+        <div class="grid-box-one-third">
           <div class="content">
             <p>33.3%</p>
           </div>
         </div>
-        <div class="grid-box-2-3">
+        <div class="grid-box-two-thirds">
           <div class="content">
             <p>66.6%</p>
           </div>
@@ -170,17 +165,17 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding whitetext">
-        <div class="grid-box-1-3">
+        <div class="grid-box-one-third">
           <div class="content">
             <p>33.3%</p>
           </div>
         </div>
-        <div class="grid-box-1-3">
+        <div class="grid-box-one-third">
           <div class="content">
             <p>33.3%</p>
           </div>
         </div>
-        <div class="grid-box-1-3">
+        <div class="grid-box-one-third">
           <div class="content">
             <p>33.3%</p>
           </div>
@@ -188,7 +183,7 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-3 grid-box-push-2-3">
+        <div class="grid-box-one-third grid-box-push-two-thirds">
           <div class="content">
             <p>
               33.3% pushed by 66.6%<br>
@@ -199,12 +194,12 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>25%</p>
           </div>
         </div>
-        <div class="grid-box-3-4">
+        <div class="grid-box-three-quarters">
           <div class="content">
             <p>75%</p>
           </div>
@@ -212,22 +207,22 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>1. 25%</p>
           </div>
         </div>
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>2. 25%</p>
           </div>
         </div>
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>3. 25%</p>
           </div>
         </div>
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>4. 25%</p>
           </div>
@@ -235,12 +230,12 @@
       </div>
 
       <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-1-4 grid-box-push-1-4">
+        <div class="grid-box-one-quarter grid-box-push-one-quarter">
           <div class="content">
             <p>25%, pushed by 25%</p>
           </div>
         </div>
-        <div class="grid-box-1-4">
+        <div class="grid-box-one-quarter">
           <div class="content">
             <p>25%</p>
           </div>

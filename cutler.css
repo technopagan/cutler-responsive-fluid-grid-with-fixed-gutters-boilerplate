@@ -24,7 +24,7 @@
    ========================================================================== */
 
 /**
-* Core basics
+* Basics
 */
 html,
 body {
@@ -90,10 +90,10 @@ header,
 nav,
 section,
 summary {
-    display: block; /* Correct block display not defined in IE 8/9 */
+    display: block; /* Correct block display for IE 8/9 */
 }
 
-.page { /* Full width+height viewport class to create slide-like content */
+.screenfill { /* Full width+height viewport class to create slide-like content */
     width: 100%;
     height: 100%;
     min-height: 100%;
@@ -105,9 +105,12 @@ summary {
 
 .fullwidth .content {
     display: table;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; /* box model switch */    
 }
 
-.maincolumn { /* main content area with a max-width for better fulltext readability */
+.limitwidth-centered { /* main content area with a max-width for better fulltext readability */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -116,16 +119,14 @@ summary {
 * Grid with responsive fluid boxes & fixed gutters
 */
 .grid-row,
-.grid-box-1,
-.grid-box-1-2,
-.grid-box-1-3,
-.grid-box-2-3,
-.grid-box-1-4,
-.grid-box-3-4,
+.grid-box-whole,
+.grid-box-half,
+.grid-box-one-third,
+.grid-box-two-thirds,
+.grid-box-one-quarter,
+.grid-box-three-quarters,
 .grid-box-goldenratio-large,
-.grid-box-goldenratio-small,
-.fullwidth .content,
-figcaption {
+.grid-box-goldenratio-small {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; /* box model switch */
@@ -166,28 +167,28 @@ figcaption {
     margin-left: -30px;
 }
 
-.grid-box-1 {
+.grid-box-whole {
     float: none;
     width: 100%;
 }
 
-.grid-box-1-2 {
+.grid-box-half {
     width: 50%;
 }
 
-.grid-box-1-3 {
+.grid-box-one-third {
     width: 33.33333%;
 }
 
-.grid-box-2-3 {
+.grid-box-two-thirds {
     width: 66.66666%;
 }
 
-.grid-box-1-4 {
+.grid-box-one-quarter {
     width: 25%;
 }
 
-.grid-box-3-4 {
+.grid-box-three-quarters {
     width: 75%;
 }
 
@@ -199,24 +200,24 @@ figcaption {
     width: 38.196601%;
 }
 
-.grid-box-1,
-.grid-box-1-2,
-.grid-box-1-3,
-.grid-box-2-3,
-.grid-box-1-4,
-.grid-box-3-4,
+.grid-box-whole,
+.grid-box-half,
+.grid-box-one-third,
+.grid-box-two-thirds,
+.grid-box-one-quarter,
+.grid-box-three-quarters,
 .grid-box-goldenratio-large,
 .grid-box-goldenratio-small {
     display: table;
     float: left;
 }
 
-.grid-box-1:before,
-.grid-box-1-2:before,
-.grid-box-1-3:before,
-.grid-box-2-3:before,
-.grid-box-1-4:before,
-.grid-box-3-4:before,
+.grid-box-whole:before,
+.grid-box-half:before,
+.grid-box-one-third:before,
+.grid-box-two-thirds:before,
+.grid-box-one-quarter:before,
+.grid-box-three-quarters:before,
 .grid-box-goldenratio-large:before,
 .grid-box-goldenratio-small:before {
     content: "";
@@ -225,23 +226,23 @@ figcaption {
     float: left;
 }
 
-.grid-box-push-1-2 { /* Push classes for grid offsets */
+.grid-box-push-half { /* Push classes for grid offsets */
     margin-left: 50%;
 }
 
-.grid-box-push-1-3 {
+.grid-box-push-one-third {
     margin-left: 33.33333%;
 }
 
-.grid-box-push-2-3 {
+.grid-box-push-two-thirds {
     margin-left: 66.66666%;
 }
 
-.grid-box-push-1-4 {
+.grid-box-push-one-quarter {
     margin-left: 25%;
 }
 
-.grid-box-push-3-4 {
+.grid-box-push-three-quarters {
     margin-left: 75%;
 }
 
@@ -259,34 +260,34 @@ figcaption {
 
 /* Range: 1px to 480px */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) {
-    .grid-box-1-2,
-    .grid-box-1-3,
-    .grid-box-2-3,
-    .grid-box-1-4,
-    .grid-box-3-4,
+    .grid-box-half,
+    .grid-box-one-third,
+    .grid-box-two-thirds,
+    .grid-box-one-quarter,
+    .grid-box-three-quarters,
     .grid-box-goldenratio-large,
     .grid-box-goldenratio-small {
         width: 100%; /* all gridboxes become single-rowed  */
     }
-    .grid-box-push-1-2,
-    .grid-box-push-1-3,
-    .grid-box-push-2-3,
-    .grid-box-push-1-4,
-    .grid-box-push-3-4 {
+    .grid-box-push-half,
+    .grid-box-push-one-third,
+    .grid-box-push-two-thirds,
+    .grid-box-push-one-quarter,
+    .grid-box-push-three-quarters {
         margin: 0; /* negate all margins */
     }
 }
 
 /* Range: 481px to 768px */
 @media only screen and (min-width: 30.0625em) and (max-width: 48em) {
-    .grid-box-1-4,
-    .grid-box-3-4,
+    .grid-box-one-quarter,
+    .grid-box-three-quarters,
     .grid-box-goldenratio-large,
     .grid-box-goldenratio-small {
         width: 100%; /* half and thirds gridboxes remain - smaller gridboxes become single-rowed  */
     }
-    .grid-box-push-1-4,
-    .grid-box-push-3-4 {
+    .grid-box-push-one-quarter,
+    .grid-box-push-three-quarters {
         margin: 0; /* negate push/pull margins for single-row gridboxes */
     }
 }
@@ -299,7 +300,7 @@ figcaption {
 /**
 * Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
 */
-.verticalorientation-parent {
+.verticalorientation-wrapper {
     display: table;
     position: relative;
     overflow: hidden;
@@ -310,7 +311,7 @@ figcaption {
     vertical-align: top;
 }
 
-.verticalorientation-center {
+.verticalorientation-middle {
     display: table-cell; /* table-cell makes it work in a variety of contexts */
     vertical-align: middle;
 }
@@ -462,6 +463,9 @@ figcaption {
     bottom: 0;
     left: 0;
     width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; /* box model switch */
     padding: 0 15px;
     background-color: #000;
     background-color: rgba(0,0,0,0.66);
@@ -483,7 +487,7 @@ img {
 audio,
 canvas,
 video {
-    display: inline-block; /* Correct inline-block display not defined in IE 8/9 */
+    display: inline-block; /* Correct inline-block for IE 8/9 */
 }
 
 audio:not([controls]) {
@@ -596,13 +600,13 @@ textarea {
 /**
 * Generic helper classes
 */
-.bgcover { /*Autoexpand the background image to cover the whole container size */
+.bgfill { /*Autoexpand the background image to cover the whole container size */
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
 }
 
-.gpuaccel { /* Make the GPU handle object rendering */
+.gpu-accel { /* Make the GPU handle object rendering */
     -moz-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
     -o-transform: translate3d(0,0,0);
