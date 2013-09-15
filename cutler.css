@@ -1,14 +1,30 @@
 /* =============================================================================
-   Cutler -  Custom Boilerplate by Tobias Baldauf
+   
+   CUTLER
+
+   A custom boilerplate for web development, featuring:
+
+    - customized Normalize.css
+    - a designer-friendly fluid (percentage-based), responsive grid layout with fixed (pixel-based) gutters
+    - optional equal-height grid boxes & a sensible inner padding solution
+    - optional slide-like layouts with orientation settings for humans
+    - responsive font-sizing
+    - proper font-size hierarchy based on Fibonacci / Lucas sequences
+    - tons of valuable readability enhancements
+    - fixes for forms, media controls, highlighting on mobile etc.
+
+
+   Need to support legacy browsers / plattforms? Cutler's got you covered!
+   It even works on oldies like:
+
+    - Internet Explorer 8 (without the responsive bits & minor usability enhancements)
+    - iOS 4
+    - Opera 12.10
+
    ========================================================================== */
 
-/*
-normalize.css v2.1.3 | MIT License | git.io/normalize
-*/
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
-
-/*
-Core basics
+/**
+* Core basics
 */
 html,
 body {
@@ -23,7 +39,8 @@ html {
 }
 
 /*
-Responsive Font Resizing // #FIXME: There must be something with less overhead than these min+max rules
+* Responsive Font Resizing
+* #FIXME: There must be something with less overhead than these min+max rules
 */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) { /* Range: 1px to 480px */
     html {
@@ -51,28 +68,52 @@ body {
     -o-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
     font: normal normal normal 1.716rem/2.432rem Helvetica Neue, Helvetica, Arial, sans-serif;
+    -moz-text-size-adjust: 100%; /* Prevent text size adjust after orientation change */
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     font-size-adjust: 0.52;
     color: #333;
     text-shadow: 0 0 1px #fff;
     text-shadow: 0 0 1px rgba(255,255,255,0.4);
 }
 
-/*
-High level layout elements
+/**
+* High level layout elements
 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+    display: block; /* Correct block display not defined in IE 8/9 */
+}
+
 .page { /* Full width+height viewport class to create slide-like content */
     width: 100%;
     height: 100%;
     min-height: 100%;
 }
 
-.maincolumn {
-    max-width: 1200px; /* #FIXME: The calculated 75em that should be 1200px do not work. It seems that app. 43.8em are ~1200px for some reason. Understand & fix! */
+.fullwidth { /* Non-Grid fullwidth class that stretches over the entire width of the browser window */
+    width: 100%;
+}
+
+.fullwidth .content {
+    display: table;
+}
+
+.maincolumn { /* main content area with a max-width for better fulltext readability */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/*
-Grid with fluid boxes & fixed gutters
+/**
+* Grid with responsive fluid boxes & fixed gutters
 */
 .grid-row,
 .grid-box-1,
@@ -184,7 +225,7 @@ figcaption {
     float: left;
 }
 
-.grid-box-push-1-2 { /* Push + Pull classes for grid offsets */
+.grid-box-push-1-2 { /* Push classes for grid offsets */
     margin-left: 50%;
 }
 
@@ -255,19 +296,8 @@ figcaption {
 
 }
 
-/*
-Non-Grid fullwidth class that stretches over the entire width of the browser window
-*/
-.fullwidth {
-    width: 100%;
-}
-
-.fullwidth .content {
-    display: table;
-}
-
-/*
-Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
+/**
+* Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
 */
 .verticalorientation-parent {
     display: table;
@@ -295,9 +325,8 @@ Vertical orientation using parent+child classes - can only be used by blocklevel
     vertical-align: bottom;    
 }
 
-
-/*
-Custom Webfonts
+/**
+* Custom Webfonts
 */
 @font-face {
     font-family: 'customwebfont';
@@ -316,45 +345,48 @@ Custom Webfonts
     font-size-adjust: 0.45;
 }
 
-/* 
-White text usable on dark backgrounds
+/**
+* Lots of small & sensible text settings
 */
-.whitetext {
-    color: #fff;
-    text-shadow: 0 0 1px #333;
-    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+
+b,
+strong { /* reset bolder to bold for Firefox4, Safari 5 & Chrome */
+    font-weight: bold; 
 }
 
-/*
-Sensible default link styles
-*/
+small { /* fix inconsistent font size in small */
+    font-size: 17px;
+    font-size: 1.716rem;
+    line-height: 24px;
+    line-height: 2.432rem;
+}
+
 a,
 a:link {
     color: #6699CC;
+    background: transparent;
 }
 
 a:visited {
     color: #778899;
 }
 
+a:focus {
+    outline: thin dotted;
+}
+
 a:hover,
 a:active {
     color: #336699;
     text-decoration: none;
+    outline: 0;
 }
 
-/*
-iOS Tap Highlight Color: http://j.mp/webkit-tap-highlight-color
-*/
-a:link {
+a:link { /* iOS tap highlight color */
   -webkit-tap-highlight-color: #fec;
 }
 
-/*
-Selection background color declarations with no text-shadow
-http://twitter.com/miketaylr/status/12228805301
-*/
-::-moz-selection {
+::-moz-selection { /* Selection background color with no text-shadow */
   background: #fec;
   color: #333;
   text-shadow: none;
@@ -365,14 +397,20 @@ http://twitter.com/miketaylr/status/12228805301
   text-shadow: none;
 }
 
-/*
-Fibonacci- / Lucas Sequence Font Sizing
-0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
+.whitetext { /*White text usable on dark backgrounds */
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+
+/** 
+* Fibonacci- / Lucas Sequence Font Sizing
+* 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
 */
 h1 {
     font-size: 66px; /* Pixel fallback for browsers that do not support REM units */
     font-size: 6.58rem;
-    line-height: 107px; /* Line height = font-size + 1 Lucas sequence step */
+    line-height: 107px; /* Line height = font-size + 1 Lucas sequence step up */
     line-height: 10.728rem;
 }
 
@@ -391,64 +429,28 @@ h2 {
 }
 
 /*
-Remove border when inside 'a' element & improve quality for older IEs
-and remove gap between image & bottom of its container: h5bp.com/i/440
-*/
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
-}
-
-/*
 Reasonable assumptions for horizontal rule
 */
 hr {
     display: block;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: 30px 0; /* #gutter */
     padding: 0;
 }
 
-/*
-Color invalid HTML5 form pseudoelements, fixed to highlight on activity
-*/
-input:required:valid,
-textarea:required:valid {
-    background-color: #fff;
-    color: #333;
-}
-
-input:focus:required:invalid,
-textarea:focus:required:invalid {
-    border-radius: 1px;
-    -moz-box-shadow: 0 0 5px red;
-    -webkit-box-shadow: 0 0 5px red;
-    box-shadow: 0 0 5px red;
-    background-color: #fdd;
-}
-
-/*
-Normalize monospace sizing
-*/
-pre,
-code {
-    font-family: Courier New, Courier, monospace, serif;
-    font-size: 10px;
-    font-size: 1.0rem;
-    font-size-adjust: 0.42;
-}
-
-/* 
-Figcaption layout over images
+/**
+* HTML5 figure consistency & figcaption layout over images
 */
 figure {
     position: relative;
     display: block;
     float: left;
     width: 100%;
+    margin: 0;
 }
 
 figure img {
@@ -466,18 +468,141 @@ figcaption {
 }
 
 /*
-Autoexpand the background image to cover the whole container size
+Image fixes: remove border when inside 'a' element & improve quality for older IEs
+and remove gap between image & bottom of its container: h5bp.com/i/440
 */
-.bgcover {
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/**
+* Fixes for HTML5 media controls
+*/
+audio,
+canvas,
+video {
+    display: inline-block; /* Correct inline-block display not defined in IE 8/9 */
+}
+
+audio:not([controls]) {
+    display: none; /* Prevent browsers from displaying audio without controls */
+    height: 0; /* Remove excess height in iOS 5 */
+}
+
+/**
+* Remove tables default spacing
+*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**
+* For code demos & preformatted text, normalize monospace sizing
+*/
+pre,
+code {
+    font-family: Courier New, Courier, monospace, serif;
+    font-size: 10px;
+    font-size: 1.0rem;
+    font-size-adjust: 0.42;
+    white-space: pre-wrap;
+}
+
+/**
+* Cross browser consistency fixes for forms
+*/
+fieldset {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input:required:valid,
+textarea:required:valid {
+    background-color: #fff;
+    color: #333;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+    border-radius: 1px;
+    -moz-box-shadow: 0 0 5px red;
+    -webkit-box-shadow: 0 0 5px red;
+    box-shadow: 0 0 5px red;
+    background-color: #fdd;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+/**
+* Generic helper classes
+*/
+.bgcover { /*Autoexpand the background image to cover the whole container size */
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
 }
 
-/*
-Make the GPU handle object rendering
-*/
-.gpuaccel {
+.gpuaccel { /* Make the GPU handle object rendering */
     -moz-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
     -o-transform: translate3d(0,0,0);
