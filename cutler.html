@@ -112,7 +112,7 @@
           <div class="content">
             <div class="verticalorientation-wrapper">
               <img src="http://placehold.it/50x200" alt="Placeholder" style="float: left;">
-              <p class="verticalorientation-middle">50%, vertically centered</p>
+              <p class="verticalorientation-middle">50%, vertically centered to its parent</p>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@
             <figure>
               <img src="http://placepuppy.it/640/360" alt="Placeholder Puppy">
               <figcaption class="whitetext">
-                O glorious caption, how I text thee!
+                Responsive Image + Caption
               </figcaption>
             </figure>
           </div>
@@ -232,14 +232,37 @@
       <div class="grid-row equalheightboxes boxpadding">
         <div class="grid-box-one-quarter grid-box-push-one-quarter">
           <div class="content">
-            <p>25%, pushed by 25%</p>
+            <p>2. 25%, pushed by 25%</p>
           </div>
         </div>
-        <div class="grid-box-one-quarter">
+        <div class="grid-box-one-quarter grid-box-push-one-quarter">
           <div class="content">
-            <p>25%</p>
+            <p>4. 25%, pushed by another 25%</p>
           </div>
         </div>        
+      </div>
+
+    </section>
+
+    <section class="limitwidth-centered">
+
+      <div class="grid-row equalheightboxes boxpadding">
+        <div class="grid-box-half">
+          <div class="content">
+            <p>4:3 ratio responsive video demo:</p>
+            <div data-fit-ratio="4:3">
+              <iframe width="640" height="480" src="http://www.youtube.com/embed/j3KMk7lEEeU" frameborder="0"  allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="grid-box-half">
+          <div class="content">
+            <p>...and for 16:9 ratio:</p>
+            <div data-fit-ratio="16:9">
+              <iframe width="1920" height="1080" src="http://www.youtube-nocookie.com/embed/eWM2joNb9NE?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>  
       </div>
 
     </section>
