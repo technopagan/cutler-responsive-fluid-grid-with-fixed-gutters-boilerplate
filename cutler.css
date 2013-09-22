@@ -40,7 +40,6 @@ html {
 
 /*
  * Responsive Font Resizing
- * #FIXME: There must be something with less overhead than these min+max rules
  */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) { /* Range: 1px to 480px */
     html {
@@ -445,7 +444,8 @@ hr {
 /**
  * HTML5 figure consistency & figcaption layout over images
  */
-figure {
+figure,
+aside {
     position: relative;
     display: table; /* cross-browser fix for liquid rescaling images <100%, but not >100% resolution */
     table-layout: fixed; /* see above; the bug would else appear on Gecko/Opera/IE */
@@ -453,7 +453,8 @@ figure {
     margin: 0;
 }
 
-figure img {
+figure img,
+aside img {
     float: left;
 }
 
