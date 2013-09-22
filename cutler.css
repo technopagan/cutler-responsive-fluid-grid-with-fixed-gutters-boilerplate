@@ -24,8 +24,8 @@
    ========================================================================== */
 
 /**
-* Basics
-*/
+ * Basics
+ */
 html,
 body {
     width: 100%;
@@ -39,9 +39,9 @@ html {
 }
 
 /*
-* Responsive Font Resizing
-* #FIXME: There must be something with less overhead than these min+max rules
-*/
+ * Responsive Font Resizing
+ * #FIXME: There must be something with less overhead than these min+max rules
+ */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) { /* Range: 1px to 480px */
     html {
         font-size: 37.5%;
@@ -78,8 +78,8 @@ body {
 }
 
 /**
-* High level layout elements
-*/
+ * High level layout elements
+ */
 article,
 aside,
 details,
@@ -116,8 +116,8 @@ summary {
 }
 
 /**
-* Grid with responsive fluid boxes & fixed gutters
-*/
+ * Grid with responsive fluid boxes & fixed gutters
+ */
 .grid-row,
 .grid-box-whole,
 .grid-box-half,
@@ -134,9 +134,9 @@ summary {
 
 .grid-row {
     overflow: hidden;
-    padding-right: 30px; /* #gutter */
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
+    padding-right: 24px; /* #gutter */
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
 }
 
 .grid-row ~ .grid-row {
@@ -159,12 +159,12 @@ summary {
 }
 
 .boxpadding .content { /* special class that can be added to .grid-row for #innerpadding */
-    padding: 30px;
+    padding: 24px;
 }
 
 .boxpadding .content:after { /* #innerpadding */
-    padding: 0 30px;
-    margin-left: -30px;
+    padding: 0 24px;
+    margin-left: -24px;
 }
 
 .grid-box-whole {
@@ -221,7 +221,7 @@ summary {
 .grid-box-goldenratio-large:before,
 .grid-box-goldenratio-small:before {
     content: "";
-    width: 30px; /* #gutter */
+    width: 24px; /* #gutter */
     height: 0;
     float: left;
 }
@@ -250,12 +250,6 @@ summary {
     display: table-cell;
     width: 100%;
     word-wrap: break-word;
-}
-
-.content img { /* liquid rescaling for images */
-    width: 100%;
-    height: auto; 
-    max-width: 100%;
 }
 
 /* Range: 1px to 480px */
@@ -298,8 +292,8 @@ summary {
 }
 
 /**
-* Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
-*/
+ * Vertical orientation using parent+child classes - can only be used by blocklevel elements nested within .content
+ */
 .verticalorientation-wrapper {
     display: table;
     position: relative;
@@ -327,8 +321,8 @@ summary {
 }
 
 /**
-* Custom Webfonts
-*/
+ * Custom Webfonts
+ */
 @font-face {
     font-family: 'customwebfont';
     src: url('/fonts/customwebfont.eot');
@@ -347,8 +341,8 @@ summary {
 }
 
 /**
-* Lots of small & sensible text settings
-*/
+ * Lots of small & sensible text settings
+ */
 
 b,
 strong { /* reset bolder to bold for Firefox4, Safari 5 & Chrome */
@@ -387,27 +381,23 @@ a:link { /* iOS tap highlight color */
   -webkit-tap-highlight-color: #fec;
 }
 
-::-moz-selection { /* Selection background color with no text-shadow */
-  background: #fec;
-  color: #333;
-  text-shadow: none;
-}
-::selection {
+::-moz-selection,
+::selection { /* Selection background color with no text-shadow */
   background: #fec;
   color: #333;
   text-shadow: none;
 }
 
-.whitetext { /*White text usable on dark backgrounds */
+.whitetext { /* White text usable on dark backgrounds */
     color: #fff;
     text-shadow: 0 0 1px #333;
     text-shadow: 0 0 1px rgba(0,0,0,0.4);
 }
 
 /** 
-* Fibonacci- / Lucas Sequence Font Sizing
-* 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
-*/
+ * Fibonacci- / Lucas Sequence Font Sizing
+ * 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
+ */
 h1 {
     font-size: 66px; /* Pixel fallback for browsers that do not support REM units */
     font-size: 6.58rem;
@@ -430,8 +420,17 @@ h2 {
 }
 
 /**
-* Reasonable assumptions for horizontal rule
-*/
+ * Paragraph margins consistent with text size. 
+ * Should match #gutter for layout beauty
+ */
+.content p {
+    margin: 0 0 24px 0;
+    margin: 0 0 2.432rem 0;    
+}
+
+/**
+ * Reasonable assumptions for horizontal rule
+ */
 hr {
     display: block;
     -moz-box-sizing: content-box;
@@ -439,18 +438,18 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 30px 0; /* #gutter */
+    margin: 24px 0; /* #gutter */
     padding: 0;
 }
 
 /**
-* HTML5 figure consistency & figcaption layout over images
-*/
+ * HTML5 figure consistency & figcaption layout over images
+ */
 figure {
     position: relative;
-    display: block;
-    float: left;
-    width: 100%;
+    display: table; /* cross-browser fix for liquid rescaling images <100%, but not >100% resolution */
+    table-layout: fixed; /* see above; the bug would else appear on Gecko/Opera/IE */
+    max-width: 100%;
     margin: 0;
 }
 
@@ -466,15 +465,15 @@ figcaption {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; /* box model switch */
-    padding: 0 15px;
+    padding: 0 12px;
     background-color: #000;
     background-color: rgba(0,0,0,0.66);
 }
 
 
 /**
-* Remove gap between media & bottom of container: h5bp.com/i/440
-*/
+ * Remove gap between media & bottom of container: h5bp.com/i/440
+ */
 img,
 iframe,
 object,
@@ -486,18 +485,19 @@ canvas {
 }
 
 /**
-Image fixes: remove border when inside 'a' element & improve quality for older IEs
-*/
+ * Image fixes: remove border when inside 'a' element & improve quality for older IEs
+ */
 img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
+    width: 100%;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
 }
 
 /**
-* Responsive #Media 
-* Avoid height:auto on iframe/object/embed due to clipping
-* https://github.com/ryanve/css3base/blob/master/css/fit.css
-*/
+ * Responsive #Media 
+ * Avoid height:auto on iframe/object/embed due to clipping
+ * https://github.com/ryanve/css3base/blob/master/css/fit.css
+ */
 img,
 iframe,
 object,
@@ -516,8 +516,8 @@ canvas {
 }
 
 /**
-* Fixes for HTML5 media controls
-*/
+ * Fixes for HTML5 media controls
+ */
 audio,
 canvas,
 video {
@@ -530,10 +530,11 @@ audio:not([controls]) {
 }
 
 /**
-* Responsive #Media
-* Maintain YouTube/Vimeo (iframe/object/embed) aspect ratio
-* <div data-fit-ratio="16:9"><iframe src width="640" height="360"></iframe></div>
-*/
+ * Responsive #Media
+ * Maintain YouTube/Vimeo (iframe/object/embed) aspect ratio
+ * <div data-fit-ratio="16:9"><iframe src width="1920" height="1080"></iframe></div>
+ * <div data-fit-ratio="4:3"><iframe src width="1920" height="1440"></iframe></div>
+ */
 [data-fit-ratio] {
     position: relative;
 }
@@ -557,16 +558,16 @@ audio:not([controls]) {
 }
 
 /**
-* Remove tables default spacing
-*/
+ * Remove tables default spacing
+ */
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 /**
-* For code demos & preformatted text, normalize monospace sizing
-*/
+ * For code demos & preformatted text, normalize monospace sizing
+ */
 pre,
 code {
     font-family: Courier New, Courier, monospace, serif;
@@ -580,8 +581,8 @@ code {
 }
 
 /**
-* Cross browser consistency fixes for forms
-*/
+ * Cross browser consistency fixes for forms
+ */
 fieldset {
     border: 1px solid #ccc;
     margin: 0;
@@ -662,12 +663,24 @@ textarea {
 }
 
 /**
-* Generic helper classes
-*/
-.bgfill { /*Autoexpand the background image to cover the whole container size */
+ * Generic helper classes
+ */
+.bgfill { /* Autoexpand the background image to cover the whole container size */
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+}
+
+.alignleft {
+    float: left;
+    margin: 0 24px 0 0; /* should match #gutter for beauty */
+    margin: 0 2.432rem 0 0; 
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 0 24px; /* should match #gutter for beauty */
+    margin: 0 0 0 2.432rem; 
 }
 
 .gpu-accel { /* Make the GPU handle object rendering */
@@ -679,10 +692,10 @@ textarea {
 }
 
 /**
-* Basic Print Styles
-* h5bp.com/s
-* https://raw.github.com/ryanve/css3base/master/css/print.css
-*/
+ * Basic Print Styles
+ * h5bp.com/s
+ * https://raw.github.com/ryanve/css3base/master/css/print.css
+ */
 @media print {
     * {
         color: black !important;
