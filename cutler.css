@@ -116,6 +116,7 @@ summary {
 .limitwidth-centered { /* main content area with a max-width for better fulltext readability */
     max-width: 1200px;
     margin: 0 auto;
+    background-color: transparent; /* set a background-color here to create a simple centered page layout */
 }
 
 /**
@@ -379,14 +380,14 @@ a:active {
 }
 
 a:link { /* iOS tap highlight color */
-  -webkit-tap-highlight-color: #fec;
+    -webkit-tap-highlight-color: #fec;
 }
 
 ::-moz-selection,
 ::selection { /* Selection background color with no text-shadow */
-  background: #fec;
-  color: #333;
-  text-shadow: none;
+    background: #fec;
+    color: #333;
+    text-shadow: none;
 }
 
 .whitetext { /* White text usable on dark backgrounds */
