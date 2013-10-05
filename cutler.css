@@ -353,9 +353,7 @@ strong { /* reset bolder to bold for Firefox4, Safari 5 & Chrome */
 }
 
 small { /* fix inconsistent font size in small */
-    font-size: 17px;
     font-size: 1.716rem;
-    line-height: 24px;
     line-height: 2.432rem;
 }
 
@@ -402,23 +400,17 @@ a:link { /* iOS tap highlight color */
  * 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
  */
 h1 {
-    font-size: 66px; /* Pixel fallback for browsers that do not support REM units */
     font-size: 6.58rem;
-    line-height: 107px; /* Line height = font-size + 1 Lucas sequence step up */
-    line-height: 10.728rem;
+    line-height: 10.728rem; /* Line height = font-size + 1 Lucas sequence step up */
 }
 
 h2 {
-    font-size: 41px;
     font-size: 4.148rem;
-    line-height: 66px;
     line-height: 6.58rem;
 }
 
 .content {
-    font-size: 24px;
     font-size: 2.432rem;
-    line-height: 41px;
     line-height: 4.148rem;
 }
 
@@ -427,7 +419,6 @@ h2 {
  * Should match #gutter for layout beauty
  */
 .content p {
-    margin: 0 0 24px 0;
     margin: 0 0 2.432rem 0;    
 }
 
@@ -576,7 +567,6 @@ table {
 pre,
 code {
     font-family: Courier New, Courier, monospace, serif;
-    font-size: 10px;
     font-size: 1.0rem;
     font-size-adjust: 0.42;
     white-space: pre-wrap;
@@ -678,14 +668,12 @@ textarea {
 
 .alignleft {
     float: left;
-    margin: 0 24px 0 0; /* should match #gutter for beauty */
-    margin: 0 2.432rem 0 0; 
+    margin: 0 2.432rem 0 0; /* should match #gutter for beauty */ 
 }
 
 .alignright {
-    float: right;
-    margin: 0 0 0 24px; /* should match #gutter for beauty */
-    margin: 0 0 0 2.432rem; 
+    float: right; 
+    margin: 0 0 0 2.432rem; /* should match #gutter for beauty */ 
 }
 
 .gpu-accel { /* Make the GPU handle object rendering */

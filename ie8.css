@@ -1,5 +1,52 @@
 
 /** 
+ * Providing pixel values for all REM sizes because they are not supported in IE8 
+ */
+
+body {
+    font-size: 17px;
+    line-height: 24px;
+}
+
+h1 {
+    font-size: 66px;
+    line-height: 107px;
+}
+
+h2 {
+    font-size: 41px;
+    line-height: 66px;
+}
+
+.content {
+    font-size: 24px;
+    line-height: 41px;
+}
+
+.content p {
+    margin: 0 0 24px 0; /* should match #gutter for beauty */    
+}
+
+small { 
+    font-size: 17px;
+    line-height: 24px;
+}
+
+pre,
+code {
+    font-size: 10px;
+}
+
+.alignleft {
+    margin: 0 24px 0 0; /* should match #gutter for beauty */
+}
+
+.alignright {
+    margin: 0 0 0 24px; /* should match #gutter for beauty */
+}
+
+
+/** 
  * Fixing fluid rescaling images in IE8 
  */
 figure,
