@@ -3,273 +3,275 @@
 <!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <html>
-  <head>
-    <meta charset="UTF-8">
-	<title>Cutler</title>
-    <meta name="description" content="A custom boilerplate for web development">
-    <meta name="keywords" content="boilerplate,css,responsive,fluid,grid,gutters,readability">
-    <meta name="author" content="Tobias Baldauf">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cutler</title>
+        <meta name="description" content="A custom boilerplate for web development">
+        <meta name="keywords" content="boilerplate,css,responsive,fluid,grid,gutters,readability">
+        <meta name="author" content="Tobias Baldauf">
+        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-	<link rel="stylesheet" type="text/css" href="cutler.css">
+        <link rel="stylesheet" type="text/css" href="cutler.css">
 
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" type="text/css" href="ie8.css" />
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-    <style type="text/css">
-      /* ONLY FOR DEMO PURPOSES - SHOULD BE DELETED WHEN STARTING YOUR OWN PROJECT */
-      body {
-        background-color: #333;  
-      }
-      .content {
-        background-color: #999;
-      }
-      .screenfill {
-        background-image: url(http://placepuppy.it/2560/1600);
-      }
-      .screenfill + .screenfill {
-        background-image: url(http://placepuppy.it/2560/1600);
-      }
-    </style>
-
+        <style type="text/css">
+          /* ONLY FOR DEMO PURPOSES - SHOULD BE DELETED WHEN STARTING YOUR OWN PROJECT */
+          body {
+            background-color: #333;  
+          }
+          .content {
+            background-color: #999;
+          }
+          .screenfill {
+            background-image: url(http://placepuppy.it/2560/1600);
+          }
+          .screenfill + .screenfill {
+            background-image: url(http://placepuppy.it/2560/1600);
+          }
+        </style>
 	</head>
+
 	<body>
 
-    <section class="screenfill bgfill verticalorientation-wrapper whitetext">
+        <section class="screenfill bgfill verticalorientation-wrapper whitetext">
 
-      <div class="verticalorientation-middle">
-        <div class="grid-row equalheightboxes boxpadding">
-          <div class="grid-box-goldenratio-large">
-            <div class="content">
-              <p>Large Golden Ratio</p>
+          <div class="verticalorientation-middle">
+            <div class="grid-row equalheightboxes boxpadding">
+              <div class="grid-box-goldenratio-large">
+                <div class="content">
+                  <p>Large Golden Ratio</p>
+                </div>
+              </div>
+              <div class="grid-box-goldenratio-small">
+                <div class="content">
+                  <p>Small Golden Ratio</p>
+                  <p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules, not order.</p>
+                  <p><small>Samuel L. Lipsum</small></p>
+                </div>
+              </div>  
             </div>
           </div>
-          <div class="grid-box-goldenratio-small">
-            <div class="content">
-              <p>Small Golden Ratio</p>
-              <p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules, not order.</p>
-              <p><small>Samuel L. Lipsum</small></p>
-            </div>
-          </div>  
-        </div>
-      </div>
 
-    </section>
+        </section>
 
-    <section class="screenfill bgfill verticalorientation-wrapper whitetext">
+        <section class="screenfill bgfill verticalorientation-wrapper whitetext">
 
-      <div class="verticalorientation-top">
-        <div class="fullwidth boxpadding">
-            <div class="content">
-              Header
-          </div>
-        </div>
-      </div>
-
-      <div class="verticalorientation-middle">
-        <div class="grid-row limitwidth-centered equalheightboxes boxpadding">
-          <div class="grid-box-goldenratio-large">
-            <div class="content">
-              <p>Large Golden Ratio</p>
+          <div class="verticalorientation-top">
+            <div class="fullwidth boxpadding">
+                <div class="content">
+                  Header
+              </div>
             </div>
           </div>
-          <div class="grid-box-goldenratio-small">
-            <div class="content">
-              <p>Small Golden Ratio</p>
-            </div>
-          </div>  
-        </div>
-      </div>
 
-      <div class="verticalorientation-bottom">
-        <div class="fullwidth boxpadding">
-          <div class="content">
-            Footer
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-     <section class="limitwidth-centered">
-
-  	  <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-whole">
-          <div class="content">
-            <h1 class="customwebfont">A major headline of magnitude one and long enough for line breakage</h1>
-            <h2>Now for a medium heading of two which should also be so long that we can see what happens on a new line</h2>
-            <p>Lorem Ipsum dolor sit amet sic transit gloria mundi, 100% width and now for a horizontal rule</p>
-            <hr>
-            <p>Sic transit gloria mundi.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-half">
-          <div class="content">
-            <div class="verticalorientation-wrapper">
-              <img src="http://placehold.it/50x200" alt="Placeholder" style="float: left;">
-              <p class="verticalorientation-middle">50%, vertically centered to its parent</p>
+          <div class="verticalorientation-middle">
+            <div class="grid-row limitwidth-centered equalheightboxes boxpadding">
+              <div class="grid-box-goldenratio-large">
+                <div class="content">
+                  <p>Large Golden Ratio</p>
+                </div>
+              </div>
+              <div class="grid-box-goldenratio-small">
+                <div class="content">
+                  <p>Small Golden Ratio</p>
+                </div>
+              </div>  
             </div>
           </div>
-        </div>
-        <div class="grid-box-half">
-          <div class="content">
-            <figure>
-              <img src="http://placepuppy.it/1024/768" width="1024" height="768" alt="Placeholder Puppy">
-              <figcaption class="whitetext">
-                Responsive Image + Caption
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>      
 
-    </section>
-
-    <section class="fullwidth boxpadding whitetext">
-      <div class="content">
-        <h1>Full Width Non Grid</h1>
-      </div>
-    </section>
-
-    <section class="limitwidth-centered">
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-goldenratio-small">
-          <div class="content">
-            <p>Golden Ratio Small</p>
-          </div>
-        </div>
-        <div class="grid-box-goldenratio-large">
-          <div class="content">
-            <aside class="alignright">
-              <img src="http://placepuppy.it/320/240" width="320" height="240" alt="Placeholder Puppy">
-            </aside>
-            <p>Mauris pulvinar ac est ac lacinia. Sed tincidunt lectus ac magna adipiscing, eu placerat nulla vehicula. In id lectus elit. Aenean et mauris non lorem luctus gravida non non dolor. Aliquam ultrices enim ac velit vulputate.</p>
-            <p>Mauris pulvinar ac est ac lacinia. Sed tincidunt lectus ac magna adipiscing, eu placerat nulla vehicula. In id lectus elit. Aenean et mauris non lorem luctus gravida non non dolor. Aliquam ultrices enim ac velit vulputate.</p>
-          </div>
-        </div>  
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-one-third">
-          <div class="content">
-            <p>33.3%</p>
-          </div>
-        </div>
-        <div class="grid-box-two-thirds">
-          <div class="content">
-            <p>66.6%</p>
-          </div>
-        </div>  
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding whitetext">
-        <div class="grid-box-one-third">
-          <div class="content">
-            <p>33.3%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-third">
-          <div class="content">
-            <p>33.3%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-third">
-          <div class="content">
-            <p>33.3%</p>
-          </div>
-        </div>      
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-one-third grid-box-push-two-thirds">
-          <div class="content">
-            <p>
-              33.3% pushed by 66.6%<br>
-              Full of text and other goodness, the content must excite, surely!
-            </p>
-          </div>
-        </div>            
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-one-quarter">
-          <div class="content">
-            <p>25%</p>
-          </div>
-        </div>
-        <div class="grid-box-three-quarters">
-          <div class="content">
-            <p>75%</p>
-          </div>
-        </div>  
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-one-quarter">
-          <div class="content">
-            <p>1. 25%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-quarter">
-          <div class="content">
-            <p>2. 25%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-quarter">
-          <div class="content">
-            <p>3. 25%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-quarter">
-          <div class="content">
-            <p>4. 25%</p>
-          </div>
-        </div>            
-      </div>
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-one-quarter grid-box-push-one-quarter">
-          <div class="content">
-            <p>2. 25%, pushed by 25%</p>
-          </div>
-        </div>
-        <div class="grid-box-one-quarter grid-box-push-one-quarter">
-          <div class="content">
-            <p>4. 25%, pushed by another 25%</p>
-          </div>
-        </div>        
-      </div>
-
-    </section>
-
-    <section class="limitwidth-centered">
-
-      <div class="grid-row equalheightboxes boxpadding">
-        <div class="grid-box-half">
-          <div class="content">
-            <p>4:3 ratio responsive video demo, small enough to show that it only scales up to 100% width set in HTML, but scales down smoothly</p>
-            <div data-fit-ratio="4:3">
-              <iframe width="420" height="315" src="http://www.youtube.com/embed/j3KMk7lEEeU" frameborder="0"  allowfullscreen></iframe>
+          <div class="verticalorientation-bottom">
+            <div class="fullwidth boxpadding">
+              <div class="content">
+                Footer
+              </div>
             </div>
           </div>
-        </div>
-        <div class="grid-box-half">
-          <div class="content">
-            <p>...and for 16:9 ratio:</p>
-            <div data-fit-ratio="16:9">
-              <iframe width="1920" height="1080" src="http://www.youtube-nocookie.com/embed/eWM2joNb9NE?rel=0" frameborder="0" allowfullscreen></iframe>
+
+        </section>
+
+         <section class="limitwidth-centered">
+
+      	  <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-whole">
+              <div class="content">
+                <h1 class="customwebfont">A major headline of magnitude one and long enough for line breakage</h1>
+                <h2>Now for a medium heading of two which should also be so long that we can see what happens on a new line</h2>
+                <p>Lorem Ipsum dolor sit amet sic transit gloria mundi, 100% width and now for a horizontal rule</p>
+                <hr>
+                <p>Sic transit gloria mundi.</p>
+              </div>
             </div>
           </div>
-        </div>  
-      </div>
 
-    </section>
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-half">
+              <div class="content">
+                <div class="verticalorientation-wrapper">
+                  <img src="http://placehold.it/50x200" alt="Placeholder" class="alignleft">
+                  <p class="verticalorientation-middle">50%, vertically centered to its parent</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid-box-half">
+              <div class="content">
+                <figure>
+                  <img src="http://placepuppy.it/1024/768" width="1024" height="768" alt="Placeholder Puppy">
+                  <figcaption class="whitetext">
+                    Responsive Image + Caption
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>      
+
+        </section>
+
+        <section class="fullwidth boxpadding whitetext">
+          <div class="content">
+            <h1>Full Width Non Grid</h1>
+          </div>
+        </section>
+
+        <section class="limitwidth-centered">
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-goldenratio-small">
+              <div class="content">
+                <p>Golden Ratio Small</p>
+              </div>
+            </div>
+            <div class="grid-box-goldenratio-large">
+              <div class="content">
+                <aside class="alignright">
+                  <img src="http://placepuppy.it/320/240" width="320" height="240" alt="Placeholder Puppy">
+                </aside>
+                <p>Mauris pulvinar ac est ac lacinia. Sed tincidunt lectus ac magna adipiscing, eu placerat nulla vehicula. In id lectus elit. Aenean et mauris non lorem luctus gravida non non dolor. Aliquam ultrices enim ac velit vulputate.</p>
+                <p>Mauris pulvinar ac est ac lacinia. Sed tincidunt lectus ac magna adipiscing, eu placerat nulla vehicula. In id lectus elit. Aenean et mauris non lorem luctus gravida non non dolor. Aliquam ultrices enim ac velit vulputate.</p>
+              </div>
+            </div>  
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-one-third">
+              <div class="content">
+                <p>33.3%</p>
+              </div>
+            </div>
+            <div class="grid-box-two-thirds">
+              <div class="content">
+                <p>66.6%</p>
+              </div>
+            </div>  
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding whitetext">
+            <div class="grid-box-one-third">
+              <div class="content">
+                <p>33.3%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-third">
+              <div class="content">
+                <p>33.3%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-third">
+              <div class="content">
+                <p>33.3%</p>
+              </div>
+            </div>      
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-one-third grid-box-push-two-thirds">
+              <div class="content">
+                <p>
+                  33.3% pushed by 66.6%<br>
+                  Full of text and other goodness, the content must excite, surely!
+                </p>
+              </div>
+            </div>            
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-one-quarter">
+              <div class="content">
+                <p>25%</p>
+              </div>
+            </div>
+            <div class="grid-box-three-quarters">
+              <div class="content">
+                <p>75%</p>
+              </div>
+            </div>  
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-one-quarter">
+              <div class="content">
+                <p>1. 25%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-quarter">
+              <div class="content">
+                <p>2. 25%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-quarter">
+              <div class="content">
+                <p>3. 25%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-quarter">
+              <div class="content">
+                <p>4. 25%</p>
+              </div>
+            </div>            
+          </div>
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-one-quarter grid-box-push-one-quarter">
+              <div class="content">
+                <p>2. 25%, pushed by 25%</p>
+              </div>
+            </div>
+            <div class="grid-box-one-quarter grid-box-push-one-quarter">
+              <div class="content">
+                <p>4. 25%, pushed by another 25%</p>
+              </div>
+            </div>        
+          </div>
+
+        </section>
+
+        <section class="limitwidth-centered">
+
+          <div class="grid-row equalheightboxes boxpadding">
+            <div class="grid-box-half">
+              <div class="content">
+                <p>4:3 ratio responsive video demo, small enough to show that it only scales up to 100% width set in HTML, but scales down smoothly</p>
+                <div data-fit-ratio="4:3">
+                  <iframe width="420" height="315" src="http://www.youtube.com/embed/j3KMk7lEEeU" frameborder="0"  allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="grid-box-half">
+              <div class="content">
+                <p>...and for 16:9 ratio:</p>
+                <div data-fit-ratio="16:9">
+                  <iframe width="1920" height="1080" src="http://www.youtube.com/embed/eWM2joNb9NE" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>  
+          </div>
+
+        </section>
 
 	</body>
 </html>

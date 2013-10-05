@@ -1,0 +1,20 @@
+
+/** 
+ * Fixing fluid rescaling images in IE8 
+ */
+figure,
+aside {
+    width: inherit;
+}
+
+figure.alignleft,
+figure.alignright,
+aside.alignleft,
+aside.alignright {
+    width: auto; /* enables floating images within texts - caveat: these cannot liquid rescale only in IE8 */
+}
+
+figure img,
+aside img {
+    width: auto;
+}
