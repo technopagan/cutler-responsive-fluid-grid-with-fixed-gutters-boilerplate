@@ -66,7 +66,11 @@ body {
     -moz-font-smoothing: subpixel-antialiased;
     -o-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
-    font: normal normal normal 1.716rem/2.432rem Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-style: normal; 
+    font-weight: normal;
+    font-size: 1.716rem;
+    line-height: 2.432rem;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     -moz-text-size-adjust: 100%; /* Prevent text size adjust after orientation change */
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
