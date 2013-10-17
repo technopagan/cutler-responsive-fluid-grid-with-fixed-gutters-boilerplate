@@ -119,6 +119,10 @@ summary {
     background-color: transparent; /* set a background-color here to create a simple centered page layout */
 }
 
+.fullwidth .limitwidth-centered { /* align content of a fullwidth element with the grid */
+    border-left: 24px solid transparent; /* #gutter */
+}
+
 /**
  * Grid with responsive fluid boxes & fixed gutters
  */
@@ -145,6 +149,12 @@ summary {
 
 .grid-row ~ .grid-row {
     border-top: none; /* prevent doubled gutter when 2 grid-rows are next to each other */
+}
+
+header .grid-row:last-of-type,
+footer .grid-row:first-of-type {
+    border-top: none; /* prevent doubled gutter between header/footer and content */
+    border-bottom: none;
 }
 
 .grid-row:after { /* clearfix */
@@ -319,9 +329,9 @@ summary {
     vertical-align: bottom;
 }
 
-.verticalorientation-bottom div { /* special care so that the box actually touches bottom 0 */
+.verticalorientation-bottom .fullwidth { /* special care so that the box actually touches bottom 0 */
     display: table-cell;
-    vertical-align: bottom;    
+    vertical-align: top;    
 }
 
 /**
@@ -421,6 +431,10 @@ h2 {
  */
 .content p {
     margin: 0 0 2.432rem 0;    
+}
+
+.content p ~ p:last-of-type { /* Negate the margin for the last paragraph of a content area */
+    margin: 0;
 }
 
 /**
