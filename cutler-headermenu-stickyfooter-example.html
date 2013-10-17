@@ -28,18 +28,26 @@
 
             <header class="verticalorientation-top">
                 <div class="fullwidth">
-                    <div class="grid-row limitwidth-centered">
-                        <div class="grid-box-whole">
+
+                    <nav class="mainnavigation limitwidth-centered" role="navigation">
+                        <div class="menuwrapper">
+                            <input type="checkbox" id="toggle" />
                             <div class="content">
-                                Header
-                            </div>
+                                <label for="toggle" class="toggle" data-open="domain.tld - Menu" data-close="Close Menu" onclick></label>
+                                <ul class="responsivemenu">
+                                    <li><a href="#">Google</a></li>
+                                    <li><a href="#">Facebook</a></li>     
+                                    <li><a href="#">Youtube</a></li>  
+                                    <li><a href="#">Twitter</a></li>  
+                                </ul>
+                            <div>
                         </div>
-                    </div>
+                    </nav>
+
                 </div>
             </header>
 
             <section class="limitwidth-centered">
-
                 <div class="grid-row">
                     <div class="grid-box-goldenratio-large">
                         <div class="content">
@@ -55,12 +63,11 @@
                         </div>
                     </div>  
                 </div>
-
                 <div class="grid-row">
                     <div class="grid-box-goldenratio-small">
                         <div class="content">
                             <p>Small Golden Ratio</p>
-                            <p>This sticky footer solution works out of the box with the current grid CSS. However, an addiotional level of nesting of top-level DOM elements is necessary to achieve the effect. Here, it is a new wrapping div that receives classes usually only given to sections.</p>
+                            <p>This <strong>sticky footer</strong> solution works out of the box with the current grid CSS. However, an addiotional level of nesting of top-level DOM elements is necessary to achieve the effect. Here, it is a new wrapping div that receives classes usually only given to sections.</p>
                         </div>
                     </div>                    
                     <div class="grid-box-goldenratio-large">
@@ -69,7 +76,6 @@
                         </div>
                     </div>
                 </div>
-
             </section>
 
             <footer class="verticalorientation-bottom">
