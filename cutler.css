@@ -335,9 +335,99 @@ footer .grid-row:first-of-type {
 }
 
 /**
- * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
+ * Custom Webfonts
+ */
+@font-face {
+    font-family: 'customwebfont';
+    src: url('/fonts/customwebfont.eot');
+    src: url('/fonts/customwebfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/customwebfont.woff') format('woff'),
+         url('/fonts/customwebfont.ttf') format('truetype'),
+         url('/fonts/customwebfont.svg#customwebfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.customwebfont {
+    font-family: customwebfont, Georgia, Times New Roman, serif;
+    font-weight: 400;
+    font-size-adjust: 0.45;
+}
+
+/**
+ * Lots of small & sensible text settings
  */
 
+b,
+strong { /* reset bolder to bold for Firefox4, Safari 5 & Chrome */
+    font-weight: bold; 
+}
+
+small { /* fix inconsistent font size in small */
+    font-size: 1.716rem;
+    line-height: 2.432rem;
+}
+
+a,
+a:link {
+    color: #6699CC;
+    background: transparent;
+}
+
+a:visited {
+    color: #778899;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    color: #336699;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:link { /* iOS tap highlight color */
+    -webkit-tap-highlight-color: #fec;
+}
+
+::-moz-selection,
+::selection { /* Selection background color with no text-shadow */
+    background: #fec;
+    color: #333;
+    text-shadow: none;
+}
+
+.whitetext { /* White text usable on dark backgrounds */
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+
+/** 
+ * Fibonacci- / Lucas Sequence Font Sizing
+ * 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
+ */
+h1 {
+    font-size: 6.58rem;
+    line-height: 10.728rem; /* Line height = font-size + 1 Lucas sequence step up */
+}
+
+h2 {
+    font-size: 4.148rem;
+    line-height: 6.58rem;
+}
+
+.content {
+    font-size: 2.432rem;
+    line-height: 4.148rem;
+}
+
+/**
+ * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
+ */
 .mainnavigation {
     position: relative;
 }
@@ -471,102 +561,11 @@ footer .grid-row:first-of-type {
 }
 
 /**
- * Custom Webfonts
- */
-@font-face {
-    font-family: 'customwebfont';
-    src: url('/fonts/customwebfont.eot');
-    src: url('/fonts/customwebfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/customwebfont.woff') format('woff'),
-         url('/fonts/customwebfont.ttf') format('truetype'),
-         url('/fonts/customwebfont.svg#customwebfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.customwebfont {
-    font-family: customwebfont, Georgia, Times New Roman, serif;
-    font-weight: 400;
-    font-size-adjust: 0.45;
-}
-
-/**
- * Lots of small & sensible text settings
- */
-
-b,
-strong { /* reset bolder to bold for Firefox4, Safari 5 & Chrome */
-    font-weight: bold; 
-}
-
-small { /* fix inconsistent font size in small */
-    font-size: 1.716rem;
-    line-height: 2.432rem;
-}
-
-a,
-a:link {
-    color: #6699CC;
-    background: transparent;
-}
-
-a:visited {
-    color: #778899;
-}
-
-a:focus {
-    outline: thin dotted;
-}
-
-a:hover,
-a:active {
-    color: #336699;
-    text-decoration: none;
-    outline: 0;
-}
-
-a:link { /* iOS tap highlight color */
-    -webkit-tap-highlight-color: #fec;
-}
-
-::-moz-selection,
-::selection { /* Selection background color with no text-shadow */
-    background: #fec;
-    color: #333;
-    text-shadow: none;
-}
-
-.whitetext { /* White text usable on dark backgrounds */
-    color: #fff;
-    text-shadow: 0 0 1px #333;
-    text-shadow: 0 0 1px rgba(0,0,0,0.4);
-}
-
-/** 
- * Fibonacci- / Lucas Sequence Font Sizing
- * 0.716, 1.716 , 2.432, 4.148, 6.58, 10.728, 17.308, 28.036 ...
- */
-h1 {
-    font-size: 6.58rem;
-    line-height: 10.728rem; /* Line height = font-size + 1 Lucas sequence step up */
-}
-
-h2 {
-    font-size: 4.148rem;
-    line-height: 6.58rem;
-}
-
-.content {
-    font-size: 2.432rem;
-    line-height: 4.148rem;
-}
-
-/**
  * Paragraph margins consistent with text size. 
  * Should match #gutter for layout beauty
  */
 .content p {
-    margin: 0 0 2.432rem 0;    
+    margin: 0 0 4.148rem 0;    
 }
 
 .content p:last-of-type { /* Negate the margin for the last paragraph of a content area */
