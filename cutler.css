@@ -560,6 +560,12 @@ h2 {
     line-height: 4.148rem;
 }
 
+.content > h1:first-child { /* Special treatment for each content's main heading h1: custom margins & paddings */
+    padding: 0;
+    margin-top: -2.432rem;
+    margin-bottom: 4.148rem;
+}
+
 /**
  * Paragraph margins consistent with fulltext fontsize
  */
