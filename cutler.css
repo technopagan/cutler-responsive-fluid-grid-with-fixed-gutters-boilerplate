@@ -120,7 +120,7 @@ summary {
 }
 
 footer .fullwidth .limitwidth-centered { /* special treatment for centered limited width footer contents within a fullwidth element */
-    border-left: 24px solid transparent; /* #gutter */
+    border-left: 66px solid transparent; /* #gutter */
 }
 
 /**
@@ -142,9 +142,9 @@ footer .fullwidth .limitwidth-centered { /* special treatment for centered limit
 
 .grid-row {
     overflow: hidden;
-    padding-right: 24px; /* #gutter */
-    border-top: 24px solid transparent;
-    border-bottom: 24px solid transparent;
+    padding-right: 66px; /* #gutter */
+    border-top: 66px solid transparent;
+    border-bottom: 66px solid transparent;
 }
 
 .grid-row ~ .grid-row {
@@ -235,7 +235,7 @@ footer .grid-row:first-of-type {
 .grid-box-goldenratio-large:before,
 .grid-box-goldenratio-small:before {
     content: "";
-    width: 24px; /* #gutter */
+    width: 66px; /* #gutter */
     height: 0;
     float: left;
 }
@@ -335,6 +335,141 @@ footer .grid-row:first-of-type {
 }
 
 /**
+ * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
+ */
+.mainnavigation {
+    position: relative;
+}
+
+.menuwrapper { 
+    width: 100%;
+    padding: 0 0 0 66px; /* #gutter */
+}
+
+#toggle,
+.toggle {
+    display: none;
+    z-index: 2;
+}
+
+.responsivemenu,
+.responsivemenu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menuwrapper, 
+.responsivemenu, 
+.responsivemenu li,
+.responsivemenu li a { 
+    height: 100%;
+}
+
+.responsivemenu li { 
+    float: left;
+}
+
+.responsivemenu li a {
+    display: block;
+    padding: 0 66px 0 0; /* #gutter */
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.responsivemenu li a:hover {
+    color: auto;
+}
+
+@media only screen and (min-width: 0.0625em) and (max-width: 48em) { /* Toggle dropdown on low resolutions. Range: 1px to 768px */
+
+    .mainnavigation {
+        top: auto;
+    }
+
+    .menuwrapper {
+        padding: 0;
+    }
+
+    .responsivemenu {
+        display: none;
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.8); /* fake modal overlay */
+    }
+
+    .responsivemenu,
+    .responsivemenu li,
+    .responsivemenu li a {
+        height: auto;
+        display: block;
+        margin: 0;
+        width: 100%;
+        text-decoration: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .responsivemenu li a:hover,
+    .responsivemenu li a:focus { /* Hover States for menu items on collapsible menu */
+        background: #F2F2F2;
+    }
+
+    .toggle {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .toggle:after { /* Styles for mobile main menu button */
+        content: attr(data-open);
+        display: block;
+        width: 100%;
+        background: #3C3B37;
+        text-align: center;
+        color: #FFFFFF;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+  
+    .toggle:hover:after {
+        background: #ff4000;
+    }
+
+    #toggle:checked + div .toggle:after {
+        content: attr(data-close);
+        background: #ff4000;
+    }
+
+    #toggle:checked + div .responsivemenu { /* This non-semantic wrapping div around label+menu fixes WebKit bug #45168 (https://bugs.webkit.org/show_bug.cgi?id=45168), thanks to http://stackoverflow.com/a/14201802 */
+        display: block;
+        opacity: 1;
+        margin: 0; /* prevent gaps before 1st menu item */
+    }
+
+    #toggle:checked + div .responsivemenu li a:link,
+    #toggle:checked + div .responsivemenu li a:visited {
+        padding-left: 66px; /* #gutter */
+        color: auto;
+    }
+
+    #toggle:checked + div .responsivemenu li a:hover,
+    #toggle:checked + div .responsivemenu li a:active {
+        color: auto;
+    }
+}
+
+/**
  * Custom Webfonts
  */
 @font-face {
@@ -426,146 +561,10 @@ h2 {
 }
 
 /**
- * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
- */
-.mainnavigation {
-    position: relative;
-}
-
-.menuwrapper { 
-    width: 100%;
-    padding: 24px 0 0 24px; /* #gutter */
-}
-
-#toggle,
-.toggle {
-    display: none;
-    z-index: 2;
-}
-
-.responsivemenu,
-.responsivemenu li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.menuwrapper, 
-.responsivemenu, 
-.menu li,
-.menu li a { 
-    height: 100%;
-}
-
-.responsivemenu li { 
-    float: left;
-}
-
-.responsivemenu li a {
-    display: block;
-    padding: 0 24px 0 0; /* #gutter */
-    text-decoration: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    box-sizing: border-box;
-}
-
-.responsivemenu li a:hover {
-    color: auto;
-}
-
-@media only screen and (min-width: 0.0625em) and (max-width: 48em) { /* Toggle dropdown on low resolutions. Range: 1px to 768px */
-
-    .mainnavigation {
-        top: auto;
-    }
-
-    .menuwrapper { 
-        padding: 0;
-    }
-
-    .responsivemenu {
-        display: none;
-        opacity: 0;
-        width: 100%;
-        position: absolute;
-        right:0;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.8); /* fake modal overlay */
-    }
-
-    .responsivemenu,
-    .responsivemenu li,
-    .responsivemenu li a {
-        height: auto;
-        display: block;
-        margin: 0; 
-        width: 100%;
-        text-decoration: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .responsivemenu li a:hover,
-    .responsivemenu li a:focus { /* Hover States for menu items on collapsible menu */
-        background: #F2F2F2;
-    }
-
-    .toggle {
-        display: block;
-        position: relative;
-        cursor: pointer;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-
-    .toggle:after { /* Styles for mobile main menu button */
-        content: attr(data-open);
-        display: block;
-        width: 100%;
-        background: #3C3B37;
-        text-align: center;
-        color: #FFFFFF;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-  
-    .toggle:hover:after {
-        background: #ff4000;
-    }
-
-    #toggle:checked + div .toggle:after {
-        content: attr(data-close);
-        background: #ff4000;
-    }
-
-    #toggle:checked + div .responsivemenu { /* This non-semantic wrapping div around label+menu fixes WebKit bug #45168 (https://bugs.webkit.org/show_bug.cgi?id=45168), thanks to http://stackoverflow.com/a/14201802 */
-        display: block;
-        opacity: 1;
-        margin: 0; /* prevent gaps before 1st menu item */
-    }
-
-    #toggle:checked + div .responsivemenu li a:link,
-    #toggle:checked + div .responsivemenu li a:visited {
-        padding-left: 24px; /* #gutter */
-        color: auto;
-    }
-
-    #toggle:checked + div .responsivemenu li a:hover,
-    #toggle:checked + div .responsivemenu li a:active {
-        color: auto;
-    }
-}
-
-/**
- * Paragraph margins consistent with text size. 
- * Should match #gutter for layout beauty
+ * Paragraph margins consistent with fulltext fontsize
  */
 .content p {
-    margin: 0 0 4.148rem 0;    
+    margin: 0 0 2.432rem 0;
 }
 
 .content p:last-of-type { /* Negate the margin for the last paragraph of a content area */
@@ -582,7 +581,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 24px 0; /* #gutter */
+    margin: 66px 0; /* #gutter */
     padding: 0;
 }
 
@@ -818,12 +817,12 @@ textarea {
 
 .alignleft {
     float: left;
-    margin: 0 2.432rem 0 0; /* should match #gutter for beauty */ 
+    margin: 0 0 6.58rem 0; /* should match #gutter for beauty */
 }
 
 .alignright {
     float: right; 
-    margin: 0 0 0 2.432rem; /* should match #gutter for beauty */ 
+    margin: 0 0 0 6.58rem; /* should match #gutter for beauty */ 
 }
 
 .gpu-accel { /* Make the GPU handle object rendering */
