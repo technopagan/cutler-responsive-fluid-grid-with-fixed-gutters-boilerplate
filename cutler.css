@@ -393,27 +393,25 @@ footer .grid-row:first-of-type {
         padding: 0;
     }
 
-    .responsivemenu {
-        display: none;
-        opacity: 0;
-        width: 100%;
-        position: absolute;
-        right: 0;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.8); /* fake modal overlay */
-    }
-
     .responsivemenu,
     .responsivemenu li,
     .responsivemenu li a {
+        display: none;
+        opacity: 0;
         height: auto;
-        display: block;
         margin: 0;
         width: 100%;
         text-decoration: none;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+    }
+
+    .responsivemenu {
+        position: absolute;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.8); /* fake modal overlay */
     }
 
     .responsivemenu li a:hover,
@@ -451,7 +449,9 @@ footer .grid-row:first-of-type {
         background: #ff4000;
     }
 
-    #toggle:checked + div .responsivemenu { /* This non-semantic wrapping div around label+menu fixes WebKit bug #45168 (https://bugs.webkit.org/show_bug.cgi?id=45168), thanks to http://stackoverflow.com/a/14201802 */
+    #toggle:checked + div .responsivemenu,
+    #toggle:checked + div .responsivemenu li,
+    #toggle:checked + div .responsivemenu li a { /* This non-semantic wrapping div around label+menu fixes WebKit bug #45168 (https://bugs.webkit.org/show_bug.cgi?id=45168), thanks to http://stackoverflow.com/a/14201802 */
         display: block;
         opacity: 1;
         margin: 0; /* prevent gaps before 1st menu item */
