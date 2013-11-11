@@ -64,6 +64,7 @@ body {
     text-rendering: optimizeLegibility; /* Smoother font-rendering & optimized legibility font stack */
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale; /* special treatment for Firefox >=25 on OSX to render fonts similar to WebKit */
     -o-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
     font-style: normal; 
@@ -338,12 +339,22 @@ footer .grid-row:first-of-type {
  * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
  */
 .mainnavigation {
-    position: relative;
+   width: 100%;
+   background-color: #ff0000;
 }
 
 .menuwrapper { 
     width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 0 0 0 66px; /* #gutter */
+}
+
+#logo {
+    display: table-cell;
+    width: auto;
+    max-width: none;
 }
 
 #toggle,
@@ -387,10 +398,15 @@ footer .grid-row:first-of-type {
 
     .mainnavigation {
         top: auto;
+        width: 42px;
+        margin: 0 0 66px 0; /* #gutter */
     }
 
     .menuwrapper {
-        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
     }
 
     .responsivemenu,
@@ -411,7 +427,10 @@ footer .grid-row:first-of-type {
         position: absolute;
         right: 0;
         background: #FFFFFF;
-        box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.8); /* fake modal overlay */
+        border-bottom: 9999px solid #303030;
+        border-bottom: 9999px solid rgba(0,0,0,0.85);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
     }
 
     .responsivemenu li a:hover,
@@ -421,32 +440,33 @@ footer .grid-row:first-of-type {
 
     .toggle {
         display: block;
-        position: relative;
+        position: absolute;
+        right: 66px; /* #gutter */
+        top: 50%;
+        margin-top: -19px;
         cursor: pointer;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         user-select: none;
+        height: 12px;
+        width: 15px;
+        overflow: hidden;
+        padding: 12px;
+        background: #FAFAF8;
+        border: 1px solid #a6a6a6;
+        border-radius: 4px;
+        
     }
 
     .toggle:after { /* Styles for mobile main menu button */
-        content: attr(data-open);
+        content: "";
+        width: 16px;
+        height: 2px;
+        padding: 0;
         display: block;
-        width: 100%;
-        background: #3C3B37;
-        text-align: center;
-        color: #FFFFFF;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-  
-    .toggle:hover:after {
-        background: #ff4000;
-    }
-
-    #toggle:checked + div .toggle:after {
-        content: attr(data-close);
-        background: #ff4000;
+        line-height: 0;
+        border-top: 6px double #606060;
+        border-bottom: 6px double #606060;
     }
 
     #toggle:checked + div .responsivemenu,
@@ -460,6 +480,7 @@ footer .grid-row:first-of-type {
     #toggle:checked + div .responsivemenu li a:link,
     #toggle:checked + div .responsivemenu li a:visited {
         padding-left: 66px; /* #gutter */
+        line-height: 6.58rem;
         color: auto;
     }
 
@@ -731,7 +752,7 @@ code {
 }
 
 /**
- * Cross browser consistency fixes for forms
+ * Cross browser consistency fixes for form elements
  */
 fieldset {
     border: 1px solid #ccc;
@@ -742,6 +763,11 @@ fieldset {
 legend {
     border: 0;
     padding: 0;
+}
+
+button {
+	border-radius: 0;
+	background-image: none;
 }
 
 button,
@@ -837,6 +863,39 @@ textarea {
     -o-transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
+}
+
+/**
+ * Some temporary, non-functional styles for beauty - should be deleted!
+ */
+body {   
+    background: #fafaf7;
+    background: -moz-linear-gradient(left,  #fafaf7 0%, #f2f2eb 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fafaf7), color-stop(100%,#f2f2eb));
+    background: -webkit-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: -o-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: -ms-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: linear-gradient(to right,  #fafaf7 0%,#f2f2eb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafaf7', endColorstr='#f2f2eb',GradientType=1 );
+}
+
+
+.limitwidth-centered {
+    box-shadow: 5px 10px 10px #d9d9d7, -5px 10px 10px #ffffff;
+    background-color: #f2f2f2;
+}
+
+header .fullwidth {
+    background-color: #fff;
+}
+
+.menuwrapper {
+    background-color: #fafaf7;   
+}
+
+footer .limitwidth-centered {
+    box-shadow: none;
+    background-color: transparent;   
 }
 
 /**
