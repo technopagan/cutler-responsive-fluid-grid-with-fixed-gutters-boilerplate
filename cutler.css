@@ -144,8 +144,8 @@ footer .fullwidth .limitwidth-centered { /* special treatment for centered limit
 .grid-row {
     overflow: hidden;
     padding-right: 66px; /* #gutter */
-    border-top: 66px solid transparent;
-    border-bottom: 66px solid transparent;
+    border-top: 66px solid transparent; /* #gutter */
+    border-bottom: 66px solid transparent; /* #gutter */
 }
 
 .grid-row ~ .grid-row {
@@ -269,6 +269,9 @@ footer .grid-row:first-of-type {
 
 /* Range: 1px to 480px */
 @media only screen and (min-width: 0.0625em) and (max-width: 30em) {
+    .grid-row {
+        padding-right: 17px; /* Reset for #gutter on small screens */
+    }
     .grid-box-half,
     .grid-box-one-third,
     .grid-box-two-thirds,
@@ -278,12 +281,47 @@ footer .grid-row:first-of-type {
     .grid-box-goldenratio-small {
         width: 100%; /* all gridboxes become single-rowed  */
     }
+
+    .grid-box-whole:before,
+    .grid-box-half:before,
+    .grid-box-one-third:before,
+    .grid-box-two-thirds:before,
+    .grid-box-one-quarter:before,
+    .grid-box-three-quarters:before,
+    .grid-box-goldenratio-large:before,
+    .grid-box-goldenratio-small:before {
+        width: 17px; /* Reset for #gutter on small screens */
+    }
+
     .grid-box-push-half,
     .grid-box-push-one-third,
     .grid-box-push-two-thirds,
     .grid-box-push-one-quarter,
     .grid-box-push-three-quarters {
         margin: 0; /* negate all margins */
+    }
+}
+
+/* Range: 1px to 768px */
+@media only screen and (min-width: 0.0625em) and (max-width: 48em) {
+    .grid-row {
+        padding-right: 17px; /* Reset for #gutter on small screens */
+    }
+    .grid-row:first-of-type {
+        padding-top: 17px; /* Reset for #gutter on small screens */
+    }
+    .grid-box-whole:before,
+    .grid-box-half:before,
+    .grid-box-one-third:before,
+    .grid-box-two-thirds:before,
+    .grid-box-one-quarter:before,
+    .grid-box-three-quarters:before,
+    .grid-box-goldenratio-large:before,
+    .grid-box-goldenratio-small:before {
+        width: 17px; /* Reset for #gutter on small screens */
+    }
+    footer .fullwidth .limitwidth-centered {
+        border-left: 17px solid transparent; /* Reset for #gutter on small screens */
     }
 }
 
@@ -399,7 +437,7 @@ footer .grid-row:first-of-type {
     .mainnavigation {
         top: auto;
         width: 42px;
-        margin: 0 0 66px 0; /* #gutter */
+        margin: auto 0;
     }
 
     .menuwrapper {
@@ -407,6 +445,7 @@ footer .grid-row:first-of-type {
         top: 0;
         width: 100%;
         height: auto;
+        padding: 0 0 0 17px; /* Reset for #gutter on small screens */
     }
 
     .responsivemenu,
@@ -441,7 +480,7 @@ footer .grid-row:first-of-type {
     .toggle {
         display: block;
         position: absolute;
-        right: 66px; /* #gutter */
+        right: 17px; /* Reset for #gutter on small screens */
         top: 50%;
         margin-top: -19px;
         cursor: pointer;
@@ -479,7 +518,7 @@ footer .grid-row:first-of-type {
 
     #toggle:checked + div .responsivemenu li a:link,
     #toggle:checked + div .responsivemenu li a:visited {
-        padding-left: 66px; /* #gutter */
+        padding-left: 17px; /* Reset for #gutter on small screens */
         line-height: 6.58rem;
         color: auto;
     }
@@ -868,7 +907,7 @@ textarea {
 /**
  * Some temporary, non-functional styles for beauty - should be deleted!
  */
-body {   
+body {    
     background: #fafaf7;
     background: -moz-linear-gradient(left,  #fafaf7 0%, #f2f2eb 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fafaf7), color-stop(100%,#f2f2eb));
@@ -890,7 +929,7 @@ header .fullwidth {
 }
 
 .menuwrapper {
-    background-color: #fafaf7;   
+    background-color: #fafaf7;  
 }
 
 footer .limitwidth-centered {
