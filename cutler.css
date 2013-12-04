@@ -29,12 +29,12 @@
 html,
 body {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 html {
+    height: 100%;
     font-size: 62.5%; /* Font normalization with REM units: 62.5% makes 1rem = 10px */
 }
 
@@ -470,7 +470,7 @@ footer .grid-row:first-of-type {
         border-bottom: 9999px solid rgba(0,0,0,0.85);
         -webkit-background-clip: padding-box;
         background-clip: padding-box;
-    }
+    } 
 
     .responsivemenu li a:hover,
     .responsivemenu li a:focus { /* Hover States for menu items on collapsible menu */
@@ -932,7 +932,7 @@ header .fullwidth {
     background-color: #fafaf7;  
 }
 
-footer .limitwidth-centered {
+footer.verticalorientation-bottom {
     box-shadow: none;
     background-color: transparent;   
 }
