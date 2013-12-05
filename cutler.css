@@ -620,6 +620,20 @@ h2 {
     line-height: 4.148rem;
 }
 
+@media only screen and (min-width: 0\0) and (max-width: 30em) and (-webkit-min-device-pixel-ratio: 0) { /* specifically target only Safari 4 when on 480px or less */
+  h1 {
+    line-height: 6.58rem;
+    }
+
+    h2 {
+    line-height: 4.148rem;
+    }
+
+    .content {
+    line-height: 2.432rem;
+    }
+}
+
 .content > h1:first-child { /* Special treatment for each content's main heading h1: custom margins & paddings */
     padding: 0;
     margin-top: -2.432rem;
