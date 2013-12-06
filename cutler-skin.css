@@ -1,0 +1,160 @@
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size-adjust: 0.52;
+    color: #333;
+    text-shadow: 0 0 1px #fff;
+    text-shadow: 0 0 1px rgba(255,255,255,0.4);
+    background: #fafaf7;
+    background: -moz-linear-gradient(left,  #fafaf7 0%, #f2f2eb 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fafaf7), color-stop(100%,#f2f2eb));
+    background: -webkit-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: -o-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: -ms-linear-gradient(left,  #fafaf7 0%,#f2f2eb 100%);
+    background: linear-gradient(to right,  #fafaf7 0%,#f2f2eb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafaf7', endColorstr='#f2f2eb',GradientType=1 );    
+}
+
+.limitwidth-centered {
+    box-shadow: 5px 10px 10px #d9d9d7, -5px 10px 10px #ffffff;
+    background-color: #f2f2f2;
+}
+
+header .fullwidth {
+    background-color: #fff;
+}
+
+footer.verticalorientation-bottom {
+    box-shadow: none;
+    background-color: transparent;   
+}
+
+/**
+ * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
+ */
+.menuwrapper {
+    background-color: #fafaf7;  
+}
+@media only screen and (min-width: 0.0625em) and (max-width: 48em) { /* Toggle dropdown on low resolutions. Range: 1px to 768px */
+    .responsivemenu {
+        background: #FFFFFF;
+        border-bottom: 9999px solid #333;
+        border-bottom: 9999px solid rgba(0,0,0,0.85);
+    }
+
+    .responsivemenu li a:hover,
+    .responsivemenu li a:focus { /* Hover States for menu items on collapsible menu */
+        background: #F2F2F2;
+    }
+
+    .toggle {
+        background: #FAFAF8;
+        border: 1px solid #a6a6a6;
+        border-radius: 4px;
+    }
+
+    .toggle:after { /* Styles for mobile main menu button */
+        border-top: 6px double #333;
+        border-bottom: 6px double #333;
+    }    
+}
+
+/**
+ * Custom Webfonts
+ */
+@font-face {
+    font-family: 'customwebfont';
+    src: url('/fonts/customwebfont.eot');
+    src: url('/fonts/customwebfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/customwebfont.woff') format('woff'),
+         url('/fonts/customwebfont.ttf') format('truetype'),
+         url('/fonts/customwebfont.svg#customwebfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.customwebfont {
+    font-family: customwebfont, Georgia, Times New Roman, serif;
+    font-weight: 400;
+    font-size-adjust: 0.45;
+}
+
+/**
+ * Lots of small & sensible text settings
+ */
+a,
+a:link {
+    color: #6699CC;
+}
+
+a:visited {
+    color: #778899;
+}
+
+a:hover,
+a:active {
+    color: #336699;
+    text-decoration: none;
+}
+
+a:link { /* iOS tap highlight color */
+    -webkit-tap-highlight-color: #fec;
+}
+
+::-moz-selection,
+::selection { /* Selection background color with no text-shadow */
+    background: #fec;
+    color: #333;
+    text-shadow: none;
+}
+
+.whitetext { /* White text usable on dark backgrounds */
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+
+/**
+ * Reasonable assumptions for horizontal rule
+ */
+hr {
+    border-top: 1px solid #ccc;
+}
+
+/**
+ * HTML5 figure consistency & figcaption layout over images
+ */
+figcaption {
+    background-color: #000;
+    background-color: rgba(0,0,0,0.66);
+}
+
+/**
+ * For code demos & preformatted text, normalize monospace sizing
+ */
+pre,
+code {
+    font-family: Courier New, Courier, monospace, serif;
+    font-size-adjust: 0.42;
+}
+
+/**
+ * Cross browser consistency fixes for form elements
+ */
+fieldset {
+    border: 1px solid #ccc;
+}
+
+input:required:valid,
+textarea:required:valid {
+    background-color: #fff;
+    color: #333;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+    border-radius: 1px;
+    -moz-box-shadow: 0 0 5px red;
+    -webkit-box-shadow: 0 0 5px red;
+    box-shadow: 0 0 5px red;
+    background-color: #fdd;
+}
