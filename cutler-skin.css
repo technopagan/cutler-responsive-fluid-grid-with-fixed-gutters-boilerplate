@@ -34,6 +34,7 @@ footer.verticalorientation-bottom {
 .menuwrapper {
     background-color: #fafaf7;  
 }
+
 @media only screen and (min-width: 0.0625em) and (max-width: 48em) { /* Toggle dropdown on low resolutions. Range: 1px to 768px */
     .responsivemenu {
         background: #FFFFFF;
