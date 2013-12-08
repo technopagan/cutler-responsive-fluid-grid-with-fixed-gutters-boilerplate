@@ -291,6 +291,11 @@ footer .grid-row:first-of-type {
     .grid-box-push-three-quarters {
         margin: 0; /* negate all margins */
     }
+
+    .equalheightboxes .content:after { /* negate ALL equal height boxes as we are on fullwidth mobile */
+        display: none;
+    }    
+
 }
 
 /* Range: 1px to 768px */
@@ -337,6 +342,14 @@ footer .grid-row:first-of-type {
     .grid-box-push-three-quarters {
         margin: 0; /* negate push/pull margins for single-row gridboxes */
     }
+
+    .equalheightboxes .grid-box-one-quarter .content:after,
+    .equalheightboxes .grid-box-three-quarters .content:after,
+    .equalheightboxes .grid-box-goldenratio-large .content:after,
+    .equalheightboxes .grid-box-goldenratio-small .content:after { /* negate equal height boxes on fullwidth Mobile */
+        display: none;
+    }
+
 }
 
 /**
