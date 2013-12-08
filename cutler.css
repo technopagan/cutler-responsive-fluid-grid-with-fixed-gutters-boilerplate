@@ -271,6 +271,17 @@ footer .grid-row:first-of-type {
     .grid-box-goldenratio-large,
     .grid-box-goldenratio-small {
         width: 100%; /* all gridboxes become single-rowed  */
+        border-bottom: 66px solid transparent; /* #gutter to give vertical margin between mobile fullwidth boxes within a grid-row */
+    }
+
+    .grid-box-half:last-of-type,
+    .grid-box-one-third:last-of-type,
+    .grid-box-two-thirds:last-of-type,
+    .grid-box-one-quarter:last-of-type,
+    .grid-box-three-quarters:last-of-type,
+    .grid-box-goldenratio-large:last-of-type,
+    .grid-box-goldenratio-small:last-of-type {
+        border-bottom: 0; /* Negate #gutter for the last box of a grid row to prevent double margins */
     }
 
     .grid-box-push-half,
@@ -312,7 +323,16 @@ footer .grid-row:first-of-type {
     .grid-box-goldenratio-large,
     .grid-box-goldenratio-small {
         width: 100%; /* half and thirds gridboxes remain - smaller gridboxes become single-rowed  */
+        border-bottom: 66px solid transparent; /* #gutter to give vertical margin between mobile fullwidth boxes within a grid-row */
     }
+
+    .grid-box-one-quarter:last-of-type,
+    .grid-box-three-quarters:last-of-type,
+    .grid-box-goldenratio-large:last-of-type,
+    .grid-box-goldenratio-small:last-of-type {
+        border-bottom: 0; /* Negate #gutter for the last box of a grid row to prevent double margins */
+    }
+
     .grid-box-push-one-quarter,
     .grid-box-push-three-quarters {
         margin: 0; /* negate push/pull margins for single-row gridboxes */
