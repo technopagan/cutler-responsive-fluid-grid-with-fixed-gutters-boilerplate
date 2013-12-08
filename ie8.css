@@ -3,6 +3,7 @@
  */
 
 body {
+    height: auto; /* resetting height to default for IE8 because it otherwise cuts off the site at viewport end */
     font-size: 17px;
     line-height: 24px;
 }

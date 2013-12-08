@@ -29,12 +29,12 @@
 html,
 body {
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 html {
-    height: 100%;
     font-size: 62.5%; /* Font normalization with REM units: 62.5% makes 1rem = 10px */
 }
 
@@ -114,7 +114,7 @@ summary {
     margin: 0 auto;
 }
 
-footer .fullwidth .limitwidth-centered { /* special treatment for centered limited width footer contents within a fullwidth element */
+footer .limitwidth-centered { /* special treatment for centered limited width footer */
     border-left: 66px solid transparent; /* #gutter */
 }
 
@@ -316,8 +316,8 @@ footer .grid-row:first-of-type {
     .grid-box-goldenratio-small:before {
         width: 17px; /* Reset for #gutter on small screens */
     }
-    footer .fullwidth .limitwidth-centered {
-        border-left: 17px solid transparent; /* Reset for #gutter on small screens */
+    footer .limitwidth-centered {
+        border-left: 0; /* Reset for #gutter on small screens */
     }
 }
 
@@ -376,9 +376,10 @@ footer .grid-row:first-of-type {
     vertical-align: bottom;
 }
 
-.verticalorientation-bottom .fullwidth { /* special care so that the box actually touches bottom 0 */
+.verticalorientation-bottom .fullwidth,
+.verticalorientation-bottom .limitwidth-centered { /* special care so that the box actually touches bottom 0 */
     display: table-cell;
-    vertical-align: top;    
+    vertical-align: bottom;
 }
 
 /**
