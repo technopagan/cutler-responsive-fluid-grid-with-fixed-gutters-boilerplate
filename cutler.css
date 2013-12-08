@@ -301,10 +301,10 @@ footer .grid-row:first-of-type {
 /* Range: 1px to 768px */
 @media only screen and (min-width: 0.0625em) and (max-width: 48em) {
     .grid-row {
-        padding-right: 17px; /* Reset for #gutter on small screens */
+        padding-right: 24px; /* Reset for #gutter on small screens */
     }
     .grid-row:first-of-type {
-        padding-top: 17px; /* Reset for #gutter on small screens */
+        padding-top: 24px; /* Reset for #gutter on small screens */
     }
     .grid-box-whole:before,
     .grid-box-half:before,
@@ -314,7 +314,7 @@ footer .grid-row:first-of-type {
     .grid-box-three-quarters:before,
     .grid-box-goldenratio-large:before,
     .grid-box-goldenratio-small:before {
-        width: 17px; /* Reset for #gutter on small screens */
+        width: 24px; /* Reset for #gutter on small screens */
     }
     footer .limitwidth-centered {
         border-left: 0; /* Reset for #gutter on small screens */
@@ -452,7 +452,7 @@ footer .grid-row:first-of-type {
         top: 0;
         width: 100%;
         height: auto;
-        padding: 0 0 0 17px; /* Reset for #gutter on small screens */
+        padding: 0 0 0 24px; /* Reset for #gutter on small screens */
     }
 
     .responsivemenu,
@@ -480,7 +480,7 @@ footer .grid-row:first-of-type {
     .toggle {
         display: block;
         position: absolute;
-        right: 17px; /* Reset for #gutter on small screens */
+        right: 24px; /* Reset for #gutter on small screens */
         top: 50%;
         margin-top: -19px;
         cursor: pointer;
@@ -512,7 +512,7 @@ footer .grid-row:first-of-type {
 
     #toggle:checked + div .responsivemenu li a:link,
     #toggle:checked + div .responsivemenu li a:visited {
-        padding-left: 17px; /* Reset for #gutter on small screens */
+        padding-left: 24px; /* Reset for #gutter on small screens */
         line-height: 6.58rem;
         color: auto;
     }
