@@ -36,17 +36,17 @@ footer.verticalorientation-bottom {
 
 @media only screen and (min-width: 0.0625em) and (max-width: 48em) { /* Toggle dropdown on low resolutions. Range: 1px to 768px */
     .responsivemenu {
-        background: #FFFFFF;
+        background-color: #fff;
         border-bottom: 9999px solid rgba(0,0,0,0.85);
     }
 
     .responsivemenu li a:hover,
     .responsivemenu li a:focus { /* Hover States for menu items on collapsible menu */
-        background: #F2F2F2;
+        background-color: #F2F2F2;
     }
 
     .toggle {
-        background: #FAFAF8;
+        background-color: #FAFAF8;
         border: 1px solid #a6a6a6;
         border-radius: 4px;
     }
