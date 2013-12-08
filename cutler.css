@@ -114,8 +114,8 @@ summary {
     margin: 0 auto;
 }
 
-footer .limitwidth-centered { /* special treatment for centered limited width footer */
-    border-left: 66px solid transparent; /* #gutter */
+footer .fullwidth .limitwidth-centered .content { /* Fix for footer with nested limited width content within fullwidth row */
+    display: table-cell;    
 }
 
 /**
@@ -294,8 +294,7 @@ footer .grid-row:first-of-type {
 
     .equalheightboxes .content:after { /* negate ALL equal height boxes as we are on fullwidth mobile */
         display: none;
-    }    
-
+    }
 }
 
 /* Range: 1px to 768px */
@@ -315,9 +314,6 @@ footer .grid-row:first-of-type {
     .grid-box-goldenratio-large:before,
     .grid-box-goldenratio-small:before {
         width: 24px; /* Reset for #gutter on small screens */
-    }
-    footer .limitwidth-centered {
-        border-left: 0; /* Reset for #gutter on small screens */
     }
 }
 
@@ -349,7 +345,6 @@ footer .grid-row:first-of-type {
     .equalheightboxes .grid-box-goldenratio-small .content:after { /* negate equal height boxes on fullwidth Mobile */
         display: none;
     }
-
 }
 
 /**
@@ -376,11 +371,14 @@ footer .grid-row:first-of-type {
     vertical-align: bottom;
 }
 
+/* #FixMe: This fixes the .screenfill functionality (positioning .verticalalignment-bottom at the actual viewport bottom, but it breaks the main footers horizontal alignment due to the table-cell definition here)
 .verticalorientation-bottom .fullwidth,
-.verticalorientation-bottom .limitwidth-centered { /* special care so that the box actually touches bottom 0 */
+.verticalorientation-bottom .limitwidth-centered {
     display: table-cell;
     vertical-align: bottom;
 }
+*/
+
 
 /**
  * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS

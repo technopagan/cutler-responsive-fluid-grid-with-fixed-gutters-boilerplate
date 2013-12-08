@@ -22,7 +22,7 @@ header .fullwidth {
     background-color: #fff;
 }
 
-footer.verticalorientation-bottom {
+footer .limitwidth-centered {
     box-shadow: none;
     background-color: transparent;   
 }
