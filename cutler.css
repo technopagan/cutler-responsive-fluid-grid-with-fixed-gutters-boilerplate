@@ -371,14 +371,16 @@ footer .grid-row:first-of-type {
     vertical-align: bottom;
 }
 
-/* #FixMe: This fixes the .screenfill functionality (positioning .verticalalignment-bottom at the actual viewport bottom, but it breaks the main footers horizontal alignment due to the table-cell definition here)
-.verticalorientation-bottom .fullwidth,
-.verticalorientation-bottom .limitwidth-centered {
+.screenfill .verticalorientation-bottom .fullwidth,
+.screenfill .verticalorientation-bottom .limitwidth-centered { /* When using .screenfill, this alignes a single screenfilled container to the actual bottom of the viewport */
     display: table-cell;
     vertical-align: bottom;
 }
-*/
 
+.screenfill footer.verticalorientation-bottom .fullwidth,
+.screenfill footer.verticalorientation-bottom .limitwidth-centered { /* Resets above fix for .screenfill so that the unique global website footer still works */
+    display: block;
+}
 
 /**
  * Responsive menu that collapses into a dropdown menu on low resolutions and works without JS
