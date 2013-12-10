@@ -115,7 +115,7 @@ summary {
 }
 
 footer .fullwidth .limitwidth-centered .content { /* Fix for footer with nested limited width content within fullwidth row */
-    display: table-cell;    
+    display: table-cell;
 }
 
 /**
