@@ -382,17 +382,19 @@ footer .grid-row:first-of-type {
     display: block;
 }
 
-.verticalcenter-relative { /* Progressive Enhancement using Flexbox to position one box vertically centered relative to another box height. This should only be used for eye-candy as Felxbox-support is unreliable. */
-    display: -webkit-box;   
-    display: -moz-box; 
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center; 
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+@media only screen and (min-width: 48.0625em) {
+    .verticalcenter-relative { /* Progressive Enhancement using Flexbox to position one box vertically centered relative to another box height. This should only be used for eye-candy as Felxbox-support is unreliable. */
+        display: -webkit-box;   
+        display: -moz-box; 
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center; 
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
 }
 
 /**
